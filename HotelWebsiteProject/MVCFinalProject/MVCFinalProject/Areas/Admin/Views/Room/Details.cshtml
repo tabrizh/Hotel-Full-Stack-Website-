@@ -1,0 +1,52 @@
+﻿@model RoomViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card mb-3">
+    <h3>Main Image</h3>
+    <img class="card-img-top" style="width: 500px; height: 500px; object-fit: contain; margin-left: 70px;" src="~/img/rooms/@Model.Image" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text"><strong>Hotel:</strong> @Model.Hotel.Name</p>
+        <p class="card-text"><strong>Description:</strong> @Html.Raw(Model.Description)</p>
+        <p class="card-text"><strong>Is Popular:</strong> @Model.Popular</p>
+        <p class="card-text"><strong>Size:</strong> @Model.Size Ft<sup>2</sup></p>
+        <p class="card-text"><strong>Price:</strong> ₼ @Model.Price</p>
+        <p class="card-text"><strong>Person Capacity:</strong> @Model.PersonCapacity</p>
+    </div>
+
+    <h1 class="mt-5 mb-5"><strong>Features</strong></h1>
+    <ul>
+        @foreach (var feature in Model.Features)
+        {
+            <li>@feature.Text</li>
+        }
+    </ul>
+
+    <h1 class="mt-5 mb-5"><strong>Services</strong></h1>
+    <ul>
+        @foreach (var service in Model.Services)
+        {
+            <li>@service.Name</li>
+        }
+    </ul>
+
+    <h1 class="mt-5 mb-5"><strong>Images</strong></h1>
+
+    <div class="card-deck" style="width:400px">
+        @foreach (var image in Model.Images)
+        {
+            <div class="card mb-5">
+                <img class="card-img-top" style="width: 400px; height: 400px; object-fit: contain;" src="~/img/rooms/room/@image.ImageURL" alt="@Model.Name">
+            </div>
+        }
+    </div>
+
+
+    <a class="btn btn-success" asp-area="Admin" asp-controller="Room" asp-action="Update" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-danger" asp-area="Admin" asp-controller="Room" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+
+</div>
+
+

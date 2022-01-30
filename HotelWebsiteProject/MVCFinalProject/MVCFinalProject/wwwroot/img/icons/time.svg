@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>icons8-wall_clock</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons8-wall_clock" fill="#000000" fill-rule="nonzero">
+            <path d="M8,0 L8,2.0585938 C3.5098524,2.5589235 0,6.3796406 0,11 C0,15.958718 4.0412819,20 9,20 C13.958718,20 18,15.958718 18,11 C18,6.3796406 14.490148,2.5589235 10,2.0585938 L10,0 L8,0 Z M9,4 C12.877838,4 16,7.1221621 16,11 C16,14.877838 12.877838,18 9,18 C5.1221621,18 2,14.877838 2,11 C2,7.1221621 5.1221621,4 9,4 Z M8,6 L8,11.414062 L11.292969,14.707031 L12.707031,13.292969 L10,10.585938 L10,6 L8,6 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

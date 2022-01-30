@@ -1,0 +1,32 @@
+﻿@*@model SliderImageViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Create a New Slider Image</h4>
+                    <form class="forms-sample" enctype="multipart/form-data" method="post" asp-controller="SliderImg" asp-action="Create">
+                        <div class="form-group">
+                            <label asp-for="Files">Image</label>
+                            <input class="form-control" asp-for="Files" placeholder="Image" accept="image/*">
+                            <span class="text-danger" asp-validation-for="Files"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidatePartial" />
+}*@
+
+

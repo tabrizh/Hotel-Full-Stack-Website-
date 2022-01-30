@@ -1,0 +1,154 @@
+﻿@model AboutPageViewModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<!-- banner -->
+  
+<section class="hotel-banner-simple hotel-transition-bottom about" style="background-image: url('../img/about/@Model.AboutPageSectionBanner.BgImage') !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hotel-center hotel-title-frame">
+                    <h1 class="hotel-mb-20 hotel-h1-inner">@Model.AboutPageSectionBanner.Heading</h1>
+                    <p class="hotel-mb-30 ">@Model.AboutPageSectionBanner.SubHeading</p>
+                    <ul class="hotel-breadcrumbs">
+                        <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
+                        <li><span>@Model.AboutPageSectionBanner.Heading</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- quote -->
+<section class="hotel-p-100-100">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="hotel-quote-with-author">
+
+                    <div class="row align-items-center ">
+                        <div class="col-lg-4 ">
+                            <div class="hotel-photo-frame imgLoad">
+                                <img class="lozad" src="~/img/faces/@Model.AboutPageCEOSection.Image" alt="Author">
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <blockquote class="">
+                                @Model.AboutPageCEOSection.Description
+                            </blockquote>
+                            <div class="hotel-quote-bottom imgLoad">
+                                <div>
+                                    <h4 class="">@Model.AboutPageCEOSection.Name</h4>
+                                    <p>@Model.AboutPageCEOSection.JobTitle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- quote end -->
+<!-- features -->
+<section class="hotel-p-0-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hotel-center hotel-title-frame hotel-mb-100">
+                    <h2 class="hotel-mb-20">Sizin Üçün Təklif Etdiklərimiz</h2>
+                    <p class="hotel-mb-30">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat illum explicabo impedit exercitationem, voluptate adipisci optio odit, consequatur, quidem in quasi qui? Iusto aliquam ipsum laboriosam, temporibus vero architecto voluptate.</p>
+                    <a href="service.html" class="hotel-btn hotel-btn-md">Xidmətlərimiz</a>
+                </div>
+
+            </div>
+            @foreach (var feature in Model.Features)
+            {
+                <div class="col-lg-3" data-aos="zoom-in" data-aos-duration="3000">
+                    <!-- icon box -->
+                    <div class="hotel-icon-box hotel-scroll-animation imgLoad">
+                        <img class="lozad" src="~/img/features/@feature.Image" alt="icon" class="hotel-mb-10">
+                        <h5>@feature.Text</h5>
+                    </div>
+                    <!-- icon box end -->
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- features end -->
+<!-- video -->
+<section class="hotel-p-0-100">
+
+    <div class="container">
+
+        <div class="hotel-about-card">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="hotel-about-text">
+                        <div class="hotel-title-frame imgLoad" data-aos="fade-right" data-aos-duration="3000">
+                            <h2 class="hotel-mb-20">@Model.AboutPageVideoSection.Heading</h2>
+                            <p class="hotel-mb-30">@Model.AboutPageVideoSection.SubHeading</p>
+                            <a data-fancybox href="@Model.AboutPageVideoSection.Link" class="hotel-btn hotel-btn-md"><img class="lozad" src="~/img/icons/play.svg" alt="icon" class="hotel-zoom">@Model.AboutPageVideoSection.ButtonText</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hotel-video-frame imgLoad" data-aos="fade-left" data-aos-duration="3000">
+                        <img class="lozad" src="~/img/about/@Model.AboutPageVideoSection.Image" alt="cover">
+                        <a data-fancybox href="@Model.AboutPageVideoSection.Link" class="hotel-play-btn">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- video end -->
+<!-- team -->
+<section class="hotel-p-0-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hotel-center hotel-title-frame hotel-mb-100" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <h2 class="hotel-mb-20">@Model.TeamSection.Heading</h2>
+                    <p>@Model.TeamSection.SubHeading</p>
+                </div>
+            </div>
+            @foreach (var member in Model.TeamMembers)
+            {
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="hotel-team-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+                        <div class="hotel-photo-frame imgLoad">
+                            <img class="lozad" src="~/img/team/@member.Image" alt="face">
+                        </div>
+                        <div class="hotel-team-member-descr">
+                            <h3 class="hotel-mb-10">@member.Name</h3>
+                            <div>@member.JobTitle</div>
+                            <ul class="hotel-member-social">
+                                <li><a href="@member.FacebookLink"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="@member.InstagramLink"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="@member.TwitterLink"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="@member.YoutubeLink"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- team end -->

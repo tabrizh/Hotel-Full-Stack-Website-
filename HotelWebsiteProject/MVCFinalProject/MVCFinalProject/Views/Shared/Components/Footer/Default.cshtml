@@ -1,0 +1,151 @@
+﻿@model LayoutViewModel
+<!-- footer -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-logo">
+                    <a href="#"><img src="~/img/logo" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-50">
+            @foreach (var footerTag in Model.FooterTags)
+            {
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h5>@footerTag.TagName</h5>
+                        <div class="widget-text">
+                            @Html.Raw(@footerTag.Icon)
+                            <p>@Html.Raw(footerTag.TagText)</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="copyright-text">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Hotel</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
+            <div class="privacy-links">
+                <a href="https://thejavidev.github.io/">The JaviDev</a>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+<!-- popup -->
+<div id="hotel-success" class="hotel-popup imgLoad">
+    <img class="lozad" data-src="img/features/12.svg" alt="success" class="hotel-succes-icon">
+    <h2 class="hotel-mb-20">Göndərildi</h2>
+    <p>Ancaq mesaj göndərilməyib. <br>Bu pop-up nümayiş üçün mövcuddur.</p>
+</div>
+<!-- popup end -->
+<!-- popup -->
+<div class="hotel-popup-frame">
+    <div class="hotel-book-form hotel-book-popup">
+        <span class="hotel-close-popup">+</span>
+        <h2 class="hotel-mb-40">Otaq Seç</h2>
+        <form>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hotel-input-frame">
+                        <label>Giriş</label>
+                        <input type="text" class="datepicker-here" data-position="bottom left" placeholder="Tarix seçin" autocomplete="off" readonly="readonly">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="hotel-input-frame">
+                        <label class="hotel-add-icon">Çıxış</label>
+                        <input type="text" class="datepicker-here" data-position="bottom left" placeholder="Tarix seçin" autocomplete="off" readonly="readonly">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="hotel-select-frame">
+                        <label>Böyük</label>
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="hotel-select-frame">
+                        <label>Uşaq</label>
+                        <select>
+                            <option value="0">1</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-12 hotel-center imgLoad">
+                    <button type="submit" class="hotel-btn"><img class="lozad" data-src="img/icons/search.svg" class="hotel-zoom" alt="icon">Axtar</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<!-- popup end -->
+<!-- login -->
+<div class="hotel-popup-frame">
+    <div class="hotel-book-form hotel-book-popup">
+        <span class="hotel-close-popup">+</span>
+        <h2 class="hotel-mb-40">Qeydiyyat</h2>
+        <form>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hotel-input-frame">
+                        <label>Giriş</label>
+                        <input type="text" class="datepicker-here" data-position="bottom left" placeholder="Tarix seçin" autocomplete="off" readonly="readonly">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="hotel-input-frame">
+                        <label class="hotel-add-icon">Çıxış</label>
+                        <input type="text" class="datepicker-here" data-position="bottom left" placeholder="Tarix seçin" autocomplete="off" readonly="readonly">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="hotel-select-frame">
+                        <label>Böyük</label>
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="hotel-select-frame">
+                        <label>Uşaq</label>
+                        <select>
+                            <option value="0">1</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-12 hotel-center imgLoad">
+                    <button type="submit" class="hotel-btn"><img class="lozad" data-src="img/icons/search.svg" class="hotel-zoom" alt="icon">Axtar</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<!-- login end -->
+  </div>
+<!-- page wrapper end -->

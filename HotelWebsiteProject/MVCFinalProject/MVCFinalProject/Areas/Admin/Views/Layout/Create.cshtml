@@ -1,0 +1,36 @@
+﻿@*@model Layout
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Create a Layout</h4>
+                    <form class="forms-sample" enctype="multipart/form-data" method="post" asp-controller="Layout" asp-action="Create">
+                        <div class="form-group">
+                            <label asp-for="FacebookURL">Facebook URL</label>
+                            <input class="form-control" asp-for="FacebookURL" placeholder="Facebook URL">
+                            <span class="text-danger" asp-validation-for="FacebookURL"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LinkedInURL">LinkedIn URL</label>
+                            <input class="form-control" asp-for="LinkedInURL" placeholder="LinkedIn URL">
+                            <span class="text-danger" asp-validation-for="LinkedInURL"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="File">Logo</label>
+                            <input class="form-control" asp-for="File" accept="image/*">
+                            <span class="text-danger" asp-validation-for="File"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+

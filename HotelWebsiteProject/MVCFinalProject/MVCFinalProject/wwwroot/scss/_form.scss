@@ -1,0 +1,241 @@
+/***************************
+
+forms
+
+***************************/
+input {
+  border-radius: 10px;
+  background-color: $bg;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  box-shadow: $shadow;
+  width: 100%;
+  height: 50px;
+  border: none;
+
+  &:focus {
+    outline: inherit;
+  }
+}
+
+textarea {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: $bg;
+  box-shadow: $shadow;
+  width: 100%;
+  border: none;
+}
+.hotel-book-form {
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 0 10px rgba(255,255,255,.15) , $shadow;
+  background-color: $bg;
+
+  & .hotel-input-frame {
+    position: relative;
+    margin-bottom: 20px;
+
+    &:before {
+      font-size: 12px;
+      pointer-events: none;
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      color: $text-3;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f073";
+    }
+  }
+
+  & .hotel-select-frame {
+    height: auto;
+
+    & .nice-select {
+      margin-bottom: 20px;
+    }
+  }
+
+  & form {
+    & label {
+      white-space: nowrap;
+    }
+
+    & .nice-select,
+    & input {
+      background-color: $bg-3;
+      box-shadow: inset $shadow;
+      border-radius: 10px;
+      color: $text-2;
+      margin-bottom: 0;
+    }
+  }
+
+  &.hotel-book-form-2 {
+    padding: 10px 10px 10px 30px;
+    border-radius: 100px;
+    margin-bottom: 30px;
+
+    & .hotel-input-frame {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    & .hotel-select-frame {
+      display: flex;
+      align-items: center;
+
+      & .nice-select {
+        margin-bottom: 0;
+      }
+    }
+
+    & form {
+      & label {
+        margin: 0 10px 0 0;
+      }
+      & button {
+        float: right;
+        padding: 0;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        & img {
+          margin: 0;
+        }
+        & span {
+        display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .hotel-book-form {
+    &.hotel-book-form-2 {
+      padding: 20px;
+      border-radius: 10px;
+      & .hotel-input-frame {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+
+      & .hotel-select-frame {
+        align-items: flex-start;
+        flex-direction: column;
+
+        & .nice-select {
+          margin-bottom: 20px;
+        }
+      }
+      & form {
+        & label {
+          margin: 0 0 10px;
+        }
+        & button {
+          float: none;
+          padding: 0 40px;
+          width: auto;
+          display: inline;
+          & img {
+            margin-right: 12px;
+          }
+          & span {
+          display: inline;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.hotel-mt-10 {
+  margin-top: 10px;
+}
+
+.nice-select {
+  border: none;
+  color: $text;
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  position: relative !important;
+
+  & .list {
+    color: $text;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+
+    & .option {
+      text-align: center;
+      display: block;
+      padding: 0;
+      width: 35px !important;
+      min-height: 35px;
+      height: 35px;
+      line-height: 35px;
+      padding: 0 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      &.selected  {
+        background-color: $accent-3;
+        color: $bg;
+        font-weight: inherit;
+      }
+    }
+  }
+}
+
+::placeholder {
+  color: $text-3;
+}
+
+.datepicker {
+  z-index: 999999999999999999;
+  background-color: $bg;
+  border: none;
+  box-shadow: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  border-radius: 10px;
+
+  & .datepicker--nav {
+    border: none;
+  }
+
+  & .datepicker--pointer {
+    display: none;
+  }
+
+  & * {
+    font-family: 'Jost', sans-serif;
+  }
+
+  & .datepicker--cell {
+    &.-current- {
+      background-color: $accent;
+      color: $bg;
+    }
+    &.-selected- {
+      background-color: $accent-3;
+      color: $bg;
+    }
+  }
+}
+.hotel-form-submit-frame {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .hotel-text-sm {
+    color: $text-3;
+    padding-left: 30px;
+  }
+}

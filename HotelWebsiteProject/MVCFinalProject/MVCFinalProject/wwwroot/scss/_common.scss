@@ -1,0 +1,638 @@
+/***************************
+
+font
+
+***************************/
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+/***************************
+
+typography
+
+***************************/
+body {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: $text-2;
+
+}
+
+section {
+  position: relative;
+}
+
+*:focus {
+  outline: inherit;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: $text;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.container {
+  position: relative;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  & li {
+    list-style-type: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: 0;
+  color: $text;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 78px;
+
+  &.hotel-h1-inner {
+    font-size: 64px;
+  }
+}
+
+h2 {
+  font-size: 38px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 54px;
+
+    &.hotel-h1-inner {
+      font-size: 54px;
+    }
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 48px;
+
+    &.hotel-h1-inner {
+      font-size: 48px;
+    }
+  }
+}
+
+.hotel-white {
+  color: $bg-3;
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    color: $bg;
+  }
+}
+
+.hotel-accent {
+  color: $accent;
+}
+
+.hotel-accent-2 {
+  color: $accent-2;
+}
+
+.hotel-accent-3 {
+  color: $accent-3;
+}
+
+.hotel-center {
+  text-align: center;
+}
+
+.hotel-left {
+  text-align: left;
+}
+
+.hotel-right {
+  text-align: right;
+}
+
+.hotel-title-frame {
+  & p {
+    max-width: 800px;
+  }
+
+  &.hotel-center {
+    & p {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+/***************************
+
+image
+
+***************************/
+.hotel-default-img {
+  width: 100%;
+  border: solid 10px $bg;
+  border-radius: 10px;
+}
+/***************************
+
+quote
+
+***************************/
+blockquote {
+  position: relative;
+  background-color: $bg;
+  padding: 30px 60px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+
+  &:before {
+    font-style: italic;
+    position: absolute;
+    top: -13px;
+    left: 15px;
+    line-height: 55px;
+    font-size: 56px;
+    color: $accent-2;
+    content: ' " ';
+    font-family: 'Monoton', cursive;
+  }
+
+  &:after {
+    font-style: italic;
+    position: absolute;
+    bottom: -20px;
+    right: 30px;
+    line-height: 0;
+    font-size: 72px;
+    color: $accent-2;
+    content: ' " ';
+    font-family: 'Monoton', cursive;
+  }
+}
+/***************************
+
+badge
+
+***************************/
+.hotel-badge {
+  border-radius: 3px;
+  color: $bg;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 4;
+  box-shadow: 0 0 0 5px rgba(255,255,255,.15);
+  background-color: $accent-2;
+  padding: 1px 10px;
+}
+/***************************
+
+button
+
+***************************/
+.hotel-btn,
+.hotel-btn:focus {
+  outline: inherit;
+  box-shadow: 0 0 0 10px $bg , $shadow;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 50px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 40px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  white-space: nowrap;
+  color: $bg !important;
+  background-color: $accent;
+  transition: 0.4s ease-in-out;
+
+  & img {
+    width: 12px;
+    margin-right: 12px;
+
+    &.hotel-zoom {
+      transform: scale(1.4) translateY(-1px);
+    }
+  }
+
+  &:hover {
+    color: #fff;
+    filter: brightness(120%);
+  }
+
+  &.hotel-btn-icon-only {
+    width: 50px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    & img {
+      margin-right: 0;
+    }
+  }
+
+  &.hotel-btn-accent-2 {
+    background-color: $accent-2;
+  }
+  &.hotel-transparent-border {
+    box-shadow: 0 0 0 10px rgba(255,255,255,.2) , $shadow;
+  }
+}
+
+.hotel-btn-group {
+  display: flex;
+  align-items: center;
+
+  & a {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+/***************************
+
+link
+
+***************************/
+.hotel-link {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-right: 20px;
+  font-weight: 500;
+  color: $text;
+  transition: 0.2s ease-in-out;
+
+  &:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f061";
+    font-size: 11px;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    transition: 0.2s ease-in-out !important;
+  }
+
+  &:hover {
+    &:after {
+      transform: translateX(5px);
+    }
+  }
+}
+/***************************
+
+universal slider
+
+***************************/
+.hotel-uni-slider {
+  overflow: visible;
+  position: relative;
+}
+
+.hotel-uni-slider-nav-panel {
+  display: flex;
+  justify-content: space-between;
+
+  & .hotel-uni-slider-pagination {
+    box-shadow: $shadow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    text-align: center;
+    z-index: 7;
+    font-size: 13px;
+    bottom: 30px;
+    background-color: $bg;
+    border-radius: 40px;
+    padding: 10px 20px;
+    box-shadow: 0 0 0 10px rgba(255,255,255,.2);
+    color: $text;
+
+    & span {
+      margin: 0 5px;
+    }
+  }
+
+  .hotel-uni-nav {
+    box-shadow: $shadow;
+    background-color: $bg;
+    border-radius: 50px;
+    float: right;
+    transition: 0.4s ease-in-out;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 0 10px rgba(255,255,255,.15);
+
+    & .hotel-uni-slider-next,
+    & .hotel-uni-slider-prev {
+      margin: 0 10px;
+      color: $text;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: 0.4s ease-in-out;
+
+      &.swiper-button-disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+/***************************
+
+grid
+
+***************************/
+.hotel-masonry-grid-item-h-x-2 {
+  & .hotel-work-item {
+    & .hotel-work-cover-frame {
+      padding-bottom: calc(126% + 20px);
+    }
+  }
+}
+
+.hotel-masonry-grid-item-50 {
+  & .hotel-work-item {
+    & .hotel-work-cover-frame {
+      padding-bottom: calc(63% + 8px);
+    }
+  }
+
+  &.hotel-masonry-grid-item-h-x-2 {
+    & .hotel-work-item {
+      & .hotel-work-cover-frame {
+        padding-bottom: calc(126% + 36px);
+      }
+    }
+  }
+}
+.hotel-masonry-grid {
+  margin: -10px;
+  min-height: 100vh !important;
+}
+
+.hotel-masonry-grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.hotel-grid-sizer,
+.hotel-masonry-grid-item {
+  width: 25%;
+}
+
+.hotel-3-col {
+  & .hotel-grid-sizer,
+  .hotel-masonry-grid-item {
+    width: 33.333%;
+  }
+}
+
+.hotel-4-col {
+  & .hotel-grid-sizer,
+  .hotel-masonry-grid-item {
+    width: 25%;
+  }
+}
+
+.hotel-masonry-grid-item {
+  float: left;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.hotel-masonry-grid-item-25 {
+  width: 25%;
+}
+
+.hotel-masonry-grid-item-33 {
+  width: 33.3333%;
+}
+
+.hotel-masonry-grid-item-50 {
+  width: 50%;
+}
+
+.hotel-masonry-grid-item-100 {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .hotel-grid-sizer,
+  .hotel-masonry-grid-item {
+    width: 50% !important;
+  }
+}
+@media (max-width: 768px) {
+  .hotel-grid-sizer,
+  .hotel-masonry-grid-item {
+    width: 100% !important;
+  }
+}
+/***************************
+
+section transitions
+
+***************************/
+.hotel-transition-top {
+  position: relative;
+  background-color: $bg-3;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -85px;
+    left: 0;
+    background-color: $bg-3;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0 50px 0 50px $bg-3;
+    background: linear-gradient(135deg, $bg-2 25%, transparent 25%) -50px 0, linear-gradient(225deg, $bg-2 25%, transparent 25%) -50px 0, linear-gradient(315deg, $bg-3 25%, transparent 25%), linear-gradient(45deg, $bg-3 25%, transparent 25%);
+    background-size: 50px 50px;
+    background-color: $bg-2;
+  }
+}
+
+.hotel-transition-bottom {
+  position: relative;
+  background-color: $bg-3;
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -85px;
+    left: 0;
+    background-color: $bg-3;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0 -50px 0 50px $bg-3;
+    background: linear-gradient(135deg, $bg-3 25%, transparent 25%) -50px 0, linear-gradient(225deg, $bg-3 25%, transparent 25%) -50px 0, linear-gradient(315deg, $bg-2 25%, transparent 25%), linear-gradient(45deg, $bg-2 25%, transparent 25%);
+    background-size: 50px 50px;
+    background-color: $bg-2;
+  }
+}
+
+.hotel-deco-left {
+  position: absolute;
+  z-index: 0;
+  width: 50%;
+  top: 20%;
+  left: -30%;
+  opacity: 0.4;
+}
+
+.hotel-deco-right {
+  position: absolute;
+  z-index: 0;
+  width: 50%;
+  top: 20%;
+  right: -30%;
+  opacity: 0.4;
+}
+/***************************
+
+spaces
+
+***************************/
+.hotel-p-180-100 {
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+
+.hotel-p-100-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.hotel-p-100-0 {
+  padding-top: 100px;
+}
+
+.hotel-p-0-100 {
+  padding-bottom: 100px;
+}
+
+.hotel-p-100-80 {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.hotel-p-80-100 {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.hotel-p-0-80 {
+  padding-bottom: 80px;
+}
+
+.hotel-p-0-90 {
+  margin-bottom: 90px;
+}
+
+.hotel-p-40-0 {
+  padding-top: 40px;
+}
+
+.hotel-mb-100 {
+  margin-bottom: 100px;
+}
+
+.hotel-mb-80 {
+  margin-bottom: 80px;
+}
+
+.hotel-mb-60 {
+  margin-bottom: 60px;
+}
+
+.hotel-mb-40 {
+  margin-bottom: 40px;
+}
+
+.hotel-mb-30 {
+  margin-bottom: 30px;
+}
+
+.hotel-mb-20 {
+  margin-bottom: 20px;
+}
+
+.hotel-mb-10 {
+  margin-bottom: 10px;
+}
+
+
+.hotel-description-frame{
+  .hotel-stars{
+    margin-bottom: 10px;
+    display: flex !important;
+    align-items: center;
+    li{
+      margin-right: 4px;
+      i{
+        color: gold;
+      }
+    }
+  }
+}

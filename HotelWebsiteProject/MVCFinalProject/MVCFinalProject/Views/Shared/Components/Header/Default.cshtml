@@ -1,0 +1,61 @@
+﻿@model LayoutViewModel
+<!-- page wrapper -->
+<div class="hotel-app">
+    <!-- preloader -->
+    <div class="hotel-preloader-frame">
+        <div class="hotel-preloader imgLoad">
+            <img class="lozad" src="~/img/@Model.LogoURL.LogoURL" alt="logo" />
+            <div class="hotel-preloader-progress">
+                <div class="hotel-preloader-bar"></div>
+            </div>
+            <div>
+                <span class="hotel-preloader-number" data-count="101">0</span>%
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- datepicker frame -->
+    <div class="hotel-datepicker-place"></div>
+
+    <!-- top bar -->
+    <div class="hotel-top-bar">
+        <div class="container">
+            <div class="hotel-left-side">
+                <!-- logo -->
+                <a asp-controller="Home" asp-action="Index" class="hotel-logo-frame" style="width: 50px;">
+                    <img src="~/img/@Model.LogoURL.LogoURL" alt="logo">
+                </a>
+                <!-- logo end -->
+            </div>
+            <div class="hotel-right-side">
+                <!-- menu -->
+                <div class="hotel-menu">
+                    <nav>
+                        <ul>
+                            @foreach (var link in Model.NavigationLinks)
+                            {
+                                <li class="@*current-item*@">
+                                    <a asp-controller="@link.NavController" asp-action="@link.NavAction">@link.NavLink</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+                <!-- menu end -->
+                <!-- action button -->
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Account" asp-action="Logout" class="hotel-btn"><img src="~/img/icons/bookmark.svg" alt="icon">Çıxış</a>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login" class="hotel-btn"><img src="~/img/icons/bookmark.svg" alt="icon">Giriş</a>
+                }
+                <!-- action button end -->
+            </div>
+            <!-- menu button -->
+            <div class="hotel-menu-btn"><span></span></div>
+            <!-- menu button end -->
+        </div>
+    </div>
+    <!-- top bar end -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons8-circled_play" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M11,0 C4.9247,0 0,4.9247 0,11 C0,17.0753 4.9247,22 11,22 C17.0753,22 22,17.0753 22,11 C22,4.9247 17.0753,0 11,0 Z M11,2.2 C15.8521,2.2 19.8,6.1479 19.8,11 C19.8,15.8521 15.8521,19.8 11,19.8 C6.1479,19.8 2.2,15.8521 2.2,11 C2.2,6.1479 6.1479,2.2 11,2.2 Z M8.8,6.05 L8.8,15.95 L15.4,11 L8.8,6.05 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

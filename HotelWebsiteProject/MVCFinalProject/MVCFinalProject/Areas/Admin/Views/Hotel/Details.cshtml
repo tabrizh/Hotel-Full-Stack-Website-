@@ -1,0 +1,38 @@
+﻿@model HotelViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card mb-3">
+    <img class="card-img-top" style="width: 500px; height: 500px; object-fit: contain; margin-left: 70px;" src="~/img/HOTEL/@Model.Image" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Html.Raw(Model.Description)</p>
+        <ul style="list-style: none; display: flex; padding: 0; color: orange;" class="hotel-stars">
+            @for (int i = 0; i < Model.StarCount; i++)
+            {
+                <li><i class="fas fa-star"></i></li>
+            }
+        </ul>
+        <p class="card-text">Room Types Count: @Model.Rooms.Count</p>
+        <p class="card-text">Is Popular: @Model.Popular</p>
+    </div>
+
+    <h1 class="mt-5 mb-5"><strong>Rooms</strong></h1>
+
+    <div class="card-deck" style="width:400px">
+        @foreach (var room in Model.Rooms)
+        {
+            <div class="card mb-5">
+                <img class="card-img-top" style="width: 400px; height: 400px; object-fit: contain;" src="~/img/rooms/@room.Image" alt="@room.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@room.Name</h5>
+                    <p class="card-text">@room.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+

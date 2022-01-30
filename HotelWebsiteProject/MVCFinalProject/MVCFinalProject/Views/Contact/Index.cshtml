@@ -1,0 +1,109 @@
+﻿@model ContactPageViewModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<!-- banner -->
+<section class="hotel-banner-simple hotel-transition-bottom contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hotel-center hotel-title-frame">
+                    <h1 class="hotel-mb-20 hotel-h1-inner">@Model.ContactPageBannerSection.Heading</h1>
+                    <p class="hotel-mb-30">@Model.ContactPageBannerSection.SubHeading</p>
+                    <ul class="hotel-breadcrumbs">
+                        <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
+                        <li><span>@Model.ContactPageBannerSection.Heading</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- contact -->
+<section class="hotel-p-100-100">
+
+    <div id="hotel-triger-1"></div>
+
+    <div class="container">
+
+        <!-- features card -->
+        <div class="hotel-features-card">
+
+            <div class="row">
+                @foreach (var card in Model.ContactPageCards)
+                {
+                    <div class="col-12 col-lg-4">
+
+                        <!-- icon box -->
+                        <div class="hotel-icon-box imgLoad">
+                            <img class="lozad" data-src="img/features/@card.Image" alt="icon" class="hotel-mb-10">
+                            <h5 class="hotel-mb-10">@card.Heading</h5>
+                            <p>@card.SubHeading</p>
+                        </div>
+                        <!-- icon box end -->
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+        <!-- contact end -->
+
+    </div>
+</section>
+
+
+
+
+<!-- map end -->
+<section class="hotel-transition-top hotel-p-0-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="hotel-scroll-animation">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Adınız">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea name="name" rows="8" placeholder="Mesajınız"></textarea>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="hotel-form-submit-frame">
+                                <!-- temporary button to show the popup -->
+                                <a class="hotel-btn" data-fancybox href="#hotel-success">Göndər</a>
+                                <!-- <button class="hotel-btn">Send</button> -->
+                                <div class="hotel-text-sm">*Şəxsi məlumatlarınızı üçüncü tərəflərə açıqlamayacağımıza söz veririk.</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- map -->
+<section class="map">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="hotel-mb-40 hotel-scroll-animation">@Model.ContactPageMapSection.Heading</h3>
+        </div>
+        <div class="col-lg-12">
+
+            <div class="hotel-map-frame hotel-mb-60">
+                <div class="hotel-lock"><i class="fas fa-lock"></i></div>
+                <div id="map" class="hotel-map"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+

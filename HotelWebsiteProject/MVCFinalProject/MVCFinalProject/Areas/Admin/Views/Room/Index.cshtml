@@ -1,0 +1,54 @@
+﻿@model List<RoomViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Rooms List</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    <th>Hotel</th>
+                                    <th>Is Popular</th>
+                                    <th>Is Available</th>
+                                    <th>How Many Available</th>
+                                    <th>Person Capacity</th>
+                                    <th>Size</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var room in Model)
+                                {
+                                    <tr>
+                                        <td><strong>@room.Name</strong></td>
+                                        <td><img style="width: 150px; height: 150px;" src="~/img/rooms/@room.Image" /></td>
+                                        <td>@room.Hotel.Name</td>
+                                        <td>@room.Popular</td>
+                                        <td>@room.IsAvailable</td>
+                                        <td>@room.Count</td>
+                                        <td>@room.PersonCapacity</td>
+                                        <td>@room.Size Ft2</td>
+                                        <td>₼ @room.Price</td>
+                                        <td><a class="btn btn-primary" asp-controller="Room" asp-action="Details" asp-route-id="@room.Id">Details</a></td>
+                                        <td><a class="btn btn-success" asp-controller="Room" asp-action="Update" asp-route-id="@room.Id">Update</a></td>
+                                        <td><a class="btn btn-danger" asp-controller="Room" asp-action="Delete" asp-route-id="@room.Id">Delete</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

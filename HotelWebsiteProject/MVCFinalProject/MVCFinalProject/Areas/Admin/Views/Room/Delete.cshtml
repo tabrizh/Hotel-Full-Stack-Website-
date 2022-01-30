@@ -1,0 +1,51 @@
+﻿@model RoomViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card mb-3">
+    <form method="post" class="ms-3 mb-5 mt-5" asp-area="Admin" asp-controller="Room" asp-action="Delete">
+        <h2>Are you sure you want to delete this room?</h2>
+        <button type="submit" class="btn btn-danger">Yes</button>
+        <a class="btn btn-outline-primary" asp-area="Admin" asp-controller="Room" asp-action="Index">No</a>
+    </form>
+    <h1 class="ms-3">Main Image</h1>
+    <img class="card-img-top" style="width: 500px; height: 500px; object-fit: contain; margin-left: 70px;" src="~/img/rooms/@Model.Image" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text"><strong>Hotel:</strong> @Model.Hotel.Name</p>
+        <p class="card-text"><strong>Description:</strong> @Html.Raw(Model.Description)</p>
+        <p class="card-text"><strong>Is Popular:</strong> @Model.Popular</p>
+        <p class="card-text"><strong>Size:</strong> @Model.Size Ft<sup>2</sup></p>
+        <p class="card-text"><strong>Price:</strong> ₼ @Model.Price</p>
+        <p class="card-text"><strong>Person Capacity:</strong> @Model.PersonCapacity</p>
+    </div>
+
+    <h1 class="mt-5 mb-5 ms-3"><strong>Features</strong></h1>
+    <ul>
+        @foreach (var feature in Model.Features)
+        {
+            <li>@feature.Text</li>
+        }
+    </ul>
+
+    <h1 class="mt-5 mb-5 ms-3"><strong>Services</strong></h1>
+    <ul class="ms-3">
+        @foreach (var service in Model.Services)
+        {
+            <li>@service.Name</li>
+        }
+    </ul>
+
+    <h1 class="mt-5 mb-5 ms-3"><strong>Images</strong></h1>
+
+    <div class="card-deck ms-3" style="width:400px">
+        @foreach (var image in Model.Images)
+        {
+            <div class="card mb-5">
+                <img class="card-img-top" style="width: 400px; height: 400px; object-fit: contain;" src="~/img/rooms/room/@image.ImageURL" alt="@Model.Name">
+            </div>
+        }
+    </div>
+</div>
+

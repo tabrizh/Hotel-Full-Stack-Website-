@@ -1,0 +1,153 @@
+﻿@model HotelPageViewModel
+@{
+    ViewData["Title"] = "Hotels";
+}
+
+<!-- banner -->
+<section class="hotel-banner-simple hotel-transition-bottom hotelrooms" style="background-image: url('../img/rooms/@Model.HotelPageBanner.BgImage') !important;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hotel-center hotel-title-frame">
+                    <h1 class="hotel-mb-20 hotel-h1-inner">@Model.HotelPageBanner.Heading</h1>
+                    <p class="hotel-mb-30">@Model.HotelPageBanner.SubHeading</p>
+                    <ul class="hotel-breadcrumbs">
+                        <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
+                        <li><span>@Model.HotelPageBanner.Heading</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- rooms -->
+<section class="hotel-p-100-100">
+    <div class="container">
+
+        <div class="hotel-filter hotel-mb-60">
+            <a href="#" data-filter="*" class="hotel-work-category hotel-current">Bütün Hotellər</a>
+            <a href="#" data-filter=".deluxe" class="hotel-work-category">Premium Otellər</a>
+            <a href="#" data-filter=".standart" class="hotel-work-category">Standart Otellər</a>
+            <a href="#" data-filter=".economy" class="hotel-work-category">Ekonomik Otellər</a>
+
+
+        </div>
+
+        <div class="hotel-masonry-grid hotel-3-col">
+
+            <div class="hotel-grid-sizer"></div>
+            @foreach (var hotel in Model.Hotels)
+            {
+                @if (hotel.StarCount == 5)
+                {
+                    <div class="hotel-masonry-grid-item hotel-masonry-grid-item-33 deluxe">
+
+                        <!-- room card -->
+                        <div class="hotel-room-card">
+                            <div class="hotel-cover-frame imgLoad">
+                                <a asp-action="Details" asp-route-id="@hotel.Id"><img class="lozad" src="~/img/HOTEL/@hotel.Image" alt="@hotel.Name image"></a>
+                                @if (hotel.Popular)
+                                {
+                                    <div class="hotel-badge">Populyar</div>
+                                }
+                            </div>
+                            <div class="hotel-description-frame">
+                                <ul class="hotel-stars">
+                                    @for (int i = 0; i < hotel.StarCount; i++)
+                                    {
+                                        <li><i class="fas fa-star"></i></li>
+                                    }
+                                </ul>
+                                <a asp-action="Details" asp-route-id="@hotel.Id">
+                                    <h3 class="hotel-mb-20">@hotel.Name</h3>
+                                </a>
+                                <div class="hotel-text-light hotel-text-sm hotel-mb-20">@hotel.Description</div>
+                                <div class="hotel-card-bottom imgLoad">
+                                    <a asp-action="Details" asp-route-id="@hotel.Id" class="hotel-btn"><img class="lozad" src="~/img/icons/bookmark.svg" alt="icon">Hotelə get</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- room card end -->
+
+                    </div>
+                }
+                else if (hotel.StarCount == 4)
+                {
+                    <div class="hotel-masonry-grid-item hotel-masonry-grid-item-33 standart">
+
+                        <!-- room card -->
+                        <div class="hotel-room-card">
+                            <div class="hotel-cover-frame imgLoad">
+                                <a asp-action="Details" asp-route-id="@hotel.Id"><img class="lozad" src="~/img/HOTEL/@hotel.Image" alt="@hotel.Name image"></a>
+                                @if (hotel.Popular)
+                                {
+                                    <div class="hotel-badge">Populyar</div>
+                                }
+                            </div>
+                            <div class="hotel-description-frame">
+                                <ul class="hotel-stars">
+                                    @for (int i = 0; i < hotel.StarCount; i++)
+                                    {
+                                        <li><i class="fas fa-star"></i></li>
+                                    }
+                                </ul>
+                                <a asp-action="Details" asp-route-id="@hotel.Id">
+                                    <h3 class="hotel-mb-20">@hotel.Name</h3>
+                                </a>
+                                <div class="hotel-text-light hotel-text-sm hotel-mb-20">@hotel.Description</div>
+                                <div class="hotel-card-bottom imgLoad">
+                                    <a asp-action="Details" asp-route-id="@hotel.Id" class="hotel-btn"><img class="lozad" src="~/img/icons/bookmark.svg" alt="icon">Hotelə get</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- room card end -->
+
+                    </div>
+                }
+                else
+                {
+                    <div class="hotel-masonry-grid-item hotel-masonry-grid-item-33 economy">
+
+                        <!-- room card -->
+                        <div class="hotel-room-card">
+                            <div class="hotel-cover-frame imgLoad">
+                                <a asp-action="Details" asp-route-id="@hotel.Id"><img class="lozad" src="~/img/HOTEL/@hotel.Image" alt="@hotel.Name image"></a>
+                                @if (hotel.Popular)
+                                {
+                                    <div class="hotel-badge">Populyar</div>
+                                }
+                            </div>
+                            <div class="hotel-description-frame">
+                                <ul class="hotel-stars" asp-route-id="@hotel.Id">
+                                    @for (int i = 0; i < hotel.StarCount; i++)
+                                    {
+                                        <li><i class="fas fa-star"></i></li>
+                                    }
+                                </ul>
+                                <a asp-action="Details" asp-route-id="@hotel.Id">
+                                    <h3 class="hotel-mb-20">@hotel.Name</h3>
+                                </a>
+                                <div class="hotel-text-light hotel-text-sm hotel-mb-20">@hotel.Description</div>
+                                <div class="hotel-card-bottom imgLoad">
+                                    <a asp-action="Details" asp-route-id="@hotel.Id" class="hotel-btn"><img class="lozad" src="~/img/icons/bookmark.svg" alt="icon">Hotelə get</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- room card end -->
+
+                    </div>
+                }
+
+            }
+
+
+
+        </div>
+
+    </div>
+</section>
+<!-- rooms end -->

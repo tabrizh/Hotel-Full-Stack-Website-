@@ -1,0 +1,59 @@
+﻿@model ServicePageViewModel
+@{
+    ViewData["Title"] = "Services";
+}
+
+<!-- banner -->
+<section class="hotel-banner-simple services" style="background-image: url('../img/services/@Model.ServicePageBannerSection.BgImage') !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hotel-center hotel-title-frame">
+                    <h1 class="hotel-mb-20 hotel-h1-inner">@Model.ServicePageBannerSection.Heading</h1>
+                    <p class="hotel-mb-30">@Model.ServicePageBannerSection.SubHeading</p>
+                    <ul class="hotel-breadcrumbs">
+                        <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
+                        <li><span>@Model.ServicePageBannerSection.Heading</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- services -->
+<section class="hotel-p-0-80 service">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hotel-center hotel-title-frame hotel-scroll-animation hotel-mb-100">
+                    <h2 class="hotel-mb-20">@Model.ServicePageServicesSection.Heading</h2>
+                    <p class="hotel-mb-30">@Model.ServicePageServicesSection.SubHeading</p>
+                </div>
+
+            </div>
+            @foreach (var service in Model.Services)
+            {
+                <div class="col-lg-4">
+
+                    <!-- service card -->
+                    <div class="hotel-ath-card hotel-scroll-animation imgLoad">
+                        <div class="hotel-cover-frame">
+                            <img class="lozad" src="~/img/services/@service.Image" alt="@service.Name">
+                        </div>
+                        <div class="hotel-card-description">
+                            <h3 class="hotel-mb-10">@service.Name</h3>
+                            <p>@service.Description</p>
+                        </div>
+                    </div>
+                    <!-- service card end -->
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- services end -->

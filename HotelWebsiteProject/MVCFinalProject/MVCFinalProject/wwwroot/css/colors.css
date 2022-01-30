@@ -1,0 +1,13 @@
+:root{
+    --color646:#64688C;
+    --color383:#383A4E;
+    --colorFFF:#fff;
+    --colorECF:#ECFAFB;
+    --color3B6:rgb(174, 149, 72);
+    --color3B6-2:rgb(211, 207, 197);
+    --color3B6-3:rgb(243, 243, 243);
+    --colorEBA:#EBA744;
+    --color64B:#64BC5F;
+    --colorF2F:#F2FFFF;
+    --shadow : 0 0 15px rgba(0,0,0,0.25);
+}

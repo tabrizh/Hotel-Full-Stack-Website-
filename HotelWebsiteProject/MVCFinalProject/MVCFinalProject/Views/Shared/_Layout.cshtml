@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <!-- page title -->
+    <title>Hotel</title>
+</head>
+
+<body>
+
+    @await Component.InvokeAsync("Header")
+
+    @RenderBody()
+
+    @await Component.InvokeAsync("Footer")
+
+    <!-- page wrapper end -->
+    <!-- jquery js -->
+    <script src="~/js/plugins/jquery.min.js"></script>
+    <script src="~/js/plugins/lozad.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+    <script>
+        const observer = lozad();
+        observer.observe();
+    </script>
+    <!-- bootstrap js -->
+    <script src="~/js/plugins/bootstrap.min.js"></script>
+    <!-- nice select js -->
+
+    <script src="~/js/plugins/jquery.nice-select.min.js"></script>
+    <!-- datepicker js -->
+    <script src="~/js/plugins/datepicker.js"></script>
+    <!-- smooth scroll js -->
+    <script src="~/js/plugins/smooth-scroll.js"></script>
+    <!-- isotope js -->
+    <script src="~/js/plugins/isotope.min.js"></script>
+    <!-- mapbox js -->
+    <script src="~/js/plugins/mapbox.min.js"></script>
+    <!-- fancybox js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.2.1/lightgallery.min.js"></script>
+    <script src="~/js/plugins/fancybox.min.js"></script>
+    <!-- swiper js -->
+    <script src="~/js/plugins/swiper.min.js"></script>
+    <!-- sticky js -->
+    <script src="~/js/plugins/sticky.js"></script>
+    <!-- kinsley js -->
+    <script src="~/js/main.js"></script>
+</body>
+</html>

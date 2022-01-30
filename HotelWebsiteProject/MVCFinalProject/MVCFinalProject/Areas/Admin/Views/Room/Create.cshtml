@@ -1,0 +1,121 @@
+﻿@model RoomCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <h4 class="card-title">Create a New Room</h4>
+                    <form class="forms-sample" method="post" asp-area="Admin" asp-controller="Room" asp-action="Create" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label asp-for="Name">Name</label>
+                            <input class="form-control" asp-for="Name">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Image">Cover Image</label>
+                            <input class="form-control" asp-for="Image" accept="image/*">
+                            <span class="text-danger" asp-validation-for="Image"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Description">Description</label>
+                            <textarea asp-for="Description"></textarea>
+                            <span class="text-danger" asp-validation-for="Description"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Size">Size</label>
+                            <input class="form-control" asp-for="Size">
+                            <span class="text-danger" asp-validation-for="Size"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PersonCapacity">Person Capacity</label>
+                            <input class="form-control" asp-for="PersonCapacity">
+                            <span class="text-danger" asp-validation-for="PersonCapacity"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Price">Price</label>
+                            <input class="form-control" asp-for="Price">
+                            <span class="text-danger" asp-validation-for="Price"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Count">Count</label>
+                            <input class="form-control" asp-for="Count">
+                            <span class="text-danger" asp-validation-for="Count"></span>
+                        </div>
+                        <div class="form-check">
+                            <label asp-for="IsAvailable">Is Available</label>
+                            <input type="checkbox" asp-for="IsAvailable">
+                            <span class="text-danger" asp-validation-for="IsAvailable"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="HotelId">Hotel</label>
+                            <select class="form-select" asp-for="HotelId">
+                                <option value="0" disabled selected>--Select a Hotel--</option>
+                                @foreach (var hotel in Model.Hotels)
+                                {
+                                    <option value="@hotel.Id">@hotel.Name</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="HotelId"></span>
+                        </div>
+                        <div class="form-check">
+                            <label asp-for="Popular">Popular</label>
+                            <input type="checkbox" asp-for="Popular">
+                            <span class="text-danger" asp-validation-for="Popular"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FeaturesId">Features</label>
+                            <select class="form-select" asp-for="FeaturesId" multiple>
+                                @foreach (var feature in Model.Features)
+                                {
+                                    <option value="@feature.Id">@feature.Text</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="FeaturesId"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ServicesId">Services</label>
+                            <select class="form-select" asp-for="ServicesId" multiple>
+                                @foreach (var service in Model.Services)
+                                {
+                                    <option value="@service.Id">@service.Name</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="ServicesId"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Images">Images</label>
+                            <input class="form-control" asp-for="Images" accept="image/*">
+                            <span class="text-danger" asp-validation-for="Images"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a asp-area="Admin" asp-controller="Room" asp-action="Index" class="btn btn-light">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidatePartial" />
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}
+

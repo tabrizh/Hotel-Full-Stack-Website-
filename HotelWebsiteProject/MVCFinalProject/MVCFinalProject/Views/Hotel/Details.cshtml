@@ -1,0 +1,140 @@
+﻿@model HotelRoomViewModel
+@{
+    ViewData["Title"] = "Rooms";
+}
+
+<!-- banner -->
+<section class="hotel-banner-simple hotel-transition-bottom hotelmenu" style="background-image: url('../../img/menu/@Model.RoomPageViewModel.RoomPageBanner.BgImage') !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hotel-center hotel-title-frame">
+                    <h1 class="hotel-mb-20 hotel-h1-inner">@Model.Hotel.Name Hotel</h1>
+                    <p class="hotel-mb-30">@Model.Hotel.Description</p>
+                    <ul class="hotel-breadcrumbs">
+                        <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
+                        <li><a asp-action="Index">Otellər</a></li>
+                        <li><span>@Model.Hotel.Name</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- menu -->
+<section class="hotel-p-100-100">
+    <div class="container">
+        <div class="hotel-book-form hotel-book-form-2">
+            <form>
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-3">
+                        <div class="hotel-input-frame hotel-book-form-2">
+                            <label for="check-in">Gəliş</label>
+                            <input id="check-in"
+                                   type="text"
+                                   class="datepicker-here"
+                                   data-position="bottom left"
+                                   placeholder="Tarix seçin"
+                                   autocomplete="off"
+                                   readonly="readonly" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="hotel-input-frame">
+                            <label for="check-out" class="hotel-add-icon">Gediş</label>
+                            <input id="check-out"
+                                   type="text"
+                                   class="datepicker-here"
+                                   data-position="bottom left"
+                                   placeholder="Tarix seçin"
+                                   autocomplete="off"
+                                   readonly="readonly" />
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="hotel-select-frame">
+                            <label for="person">Böyük</label>
+                            <select id="person">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4" disabled>4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="hotel-select-frame">
+                            <label for="children">Uşaq</label>
+                            <select id="children">
+                                <option value="1">0</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="3" disabled>3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-1 text-center imgLoad">
+                        <button type="submit" class="hotel-btn">
+                            <img class="lozad" src="~/img/icons/search.svg"
+                                 class="hotel-zoom"
+                                 alt="icon" /><span>Axtar</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="hotel-masonry-grid hotel-3-col">
+
+            <div class="hotel-grid-sizer"></div>
+            @foreach (var room in Model.RoomPageViewModel.Rooms)
+            {
+                <div class="hotel-masonry-grid-item hotel-masonry-grid-item-33 deluxe">
+
+                    <!-- room card -->
+                    <div class="hotel-room-card">
+                        <div class="hotel-cover-frame imgLoad">
+                            <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id"><img class="lozad" src="~/img/rooms/@room.Image" alt="cover"></a>
+                            @if (room.Popular)
+                            {
+                                <div class="hotel-badge">Populyar</div>
+                            }
+                        </div>
+                        <div class="hotel-description-frame">
+                            <div class="hotel-room-features imgLoad">
+                                <div class="hotel-feature">
+                                    <div class="hotel-icon-frame"><img class="lozad" src="~/img/icons/bed.svg" alt="icon"></div>
+                                    <span>@room.PersonCapacity Nəfərlik</span>
+                                </div>
+                                <div class="hotel-feature imgLoad">
+                                    <div class="hotel-icon-frame"><img class="lozad" src="~/img/icons/square.svg" alt="icon"></div>
+                                    <span>@room.Size Ft²</span>
+                                </div>
+                            </div>
+                            <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id">
+                                <h3 class="hotel-mb-20">@room.Name Otaq</h3>
+                            </a>
+                            <div class="hotel-text-light hotel-text-sm hotel-mb-20">@Html.Raw(room.Description)</div>
+                            <div class="hotel-card-bottom imgLoad">
+                                <div class="hotel-price">@room.Price ₼ <span>/gecə</span></div>
+                                <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id" class="hotel-btn"><img class="lozad" src="~/img/icons/bookmark.svg" alt="icon">Rezerv et</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- room card end -->
+
+                </div>
+            }
+
+
+
+        </div>
+
+    </div>
+</section>
+<!-- menu end -->

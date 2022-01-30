@@ -1,0 +1,438 @@
+﻿@model HomePageViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var count = 0;
+}
+
+<!-- banner -->
+<section class="hotel-banner imgLoad">
+    <div class="hotel-cover-frame">
+        <img class="lozad" src="~/img/banners/@Model.HomePageBannerSection.Image"
+             alt="banner"
+             class="hotel-parallax" />
+    </div>
+    <div class="hotel-overlay"></div>
+
+    <div class="hotel-banner-content">
+        <div class="container">
+            <div class="hotel-main-title">
+                <div class="hotel-white">
+                    <ul class="hotel-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                    </ul>
+                    <!-- main-title -->
+                    <h1 class="hotel-center hotel-mb-10">
+                        @Model.HomePageBannerSection.Heading
+                    </h1>
+                    <div class="hotel-mb-30 hotel-center">
+                        @Model.HomePageBannerSection.SubHeading
+                    </div>
+                </div>
+            </div>
+            <div class="hotel-book-form hotel-book-form-2">
+                <form>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-3">
+                            <div class="hotel-input-frame hotel-book-form-2">
+                                <label for="check-in">Gəliş</label>
+                                <input id="check-in"
+                                       type="text"
+                                       class="datepicker-here"
+                                       data-position="bottom left"
+                                       placeholder="Tarix seçin"
+                                       autocomplete="off"
+                                       readonly="readonly" />
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="hotel-input-frame">
+                                <label for="check-out" class="hotel-add-icon">Gediş</label>
+                                <input id="check-out"
+                                       type="text"
+                                       class="datepicker-here"
+                                       data-position="bottom left"
+                                       placeholder="Tarix seçin"
+                                       autocomplete="off"
+                                       readonly="readonly" />
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="hotel-select-frame">
+                                <label for="person">Böyük</label>
+                                <select id="person">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4" disabled>4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <div class="hotel-select-frame">
+                                <label for="children">Uşaq</label>
+                                <select id="children">
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="3" disabled>3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-1 text-center imgLoad">
+                            <button type="submit" class="hotel-btn">
+                                <img class="lozad" src="~/img/icons/search.svg"
+                                     class="hotel-zoom"
+                                     alt="icon" /><span>Axtar</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="hotel-scroll-hint-frame">
+                <div class="hotel-white hotel-mb-20">Aşağı çəkin</div>
+                <a href="#hotel-triger-1"
+                   class="hotel-scroll-hint knsk-s-s"></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- features -->
+<section id="hotel-triger-1">
+    <div class="container">
+        <!-- features card -->
+        <div class="hotel-features-card" style="margin-top: -80px">
+            <div class="row">
+                @foreach (var feature in Model.Features)
+	            {
+                <div class="col-6 col-lg-3">
+                    <!-- icon box -->
+                    <div class="hotel-icon-box imgLoad">
+                        <img class="lozad" src="~/img/features/@feature.Image"
+                             alt="icon"
+                             class="hotel-mb-10" />
+                        <h5>@feature.Text</h5>
+                    </div>
+                    <!-- icon box end -->
+                </div>
+	            }
+            </div>
+        </div>
+        <!-- features card end -->
+    </div>
+</section>
+<!-- features end -->
+<!-- about -->
+<section class="hotel-p-100-100">
+    <div class="container">
+        <div class="hotel-about-card">
+            <div class="row no-gutters">
+                @foreach (var about in Model.AboutSection)
+                {
+                    <div class="col-lg-6 order-lg-@count imgLoad">
+                        <div class="hotel-about-photo">
+                            <img class="lozad" src="~/img/about/@about.Image" alt="cover" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="hotel-about-text">
+                            <div class="hotel-title-frame">
+                                <h2 class="hotel-mb-20">
+                                    @about.Heading
+                                </h2>
+                                <p class="hotel-mb-30">
+                                    @about.Description
+                                </p>
+                                <a asp-controller="About" asp-action="Index" class="hotel-btn hotel-btn-md">@about.BtnText</a>
+                            </div>
+                        </div>
+                    </div>
+                    @if (count % 2 == 0 && count !> Model.AboutSection.Count)
+                    {
+                        @Html.Raw("</div>")
+                        @Html.Raw("<div class='row no - gutters'>")
+                    }
+                    count+=2;
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about end -->
+<!-- gallery -->
+<section class="hotel-transition-top hotel-p-0-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="
+									hotel-center
+									hotel-title-frame
+									hotel-scroll-animation
+									hotel-mb-100
+								">
+                    <h2 class="hotel-mb-20">@Model.GallerySection.Heading</h2>
+                    <p class="hotel-mb-30">
+                        @Model.GallerySection.Description
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <!-- slider -->
+                <div class="
+									swiper-container
+									hotel-about-slider hotel-scroll-animation
+								">
+                    <div class="swiper-wrapper">
+                        @foreach (var galleryItem in Model.GallerySectionImages)
+                        {
+                            <div class="swiper-slide imgLoad">
+                                <!-- gallery item -->
+                                <div class="hotel-image-frame">
+                                    <a data-fancybox="gallery"
+                                       href="~/img/about/@galleryItem.Image">
+                                        <img class="lozad" src="~/img/about/@galleryItem.Image" alt="about" />
+                                        <div class="hotel-badge">Tam ölçüdə bax</div>
+                                        <span class="hotel-zoom">
+                                            <i class="fas fa-search-plus"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- gallery item end -->
+                            </div>
+                        }
+                    </div>
+
+                    <!-- slider navigation -->
+                    <div class="hotel-slider-nav-panel">
+                        <!-- pagination -->
+                        <div class="hotel-about-slider-1-pagination"></div>
+                        <!-- navigation -->
+                        <div class="hotel-about-slider-nav">
+                            <div class="hotel-about-slider-1-prev">
+                                <i class="fas fa-arrow-left"></i>
+                            </div>
+                            <div class="hotel-about-slider-1-next">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <!-- navigation end -->
+                    </div>
+                    <!-- slider navigation end -->
+                </div>
+                <!-- slider end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- gallery end -->
+<!-- counters -->
+<section class="hotel-p-0-100" style="background-color: #fff">
+    <div class="container">
+        <!-- features card -->
+        <div class="
+							hotel-features-card hotel-counters-card hotel-scroll-animation
+						">
+            <div class="row">
+                @foreach (var featuresCard in Model.FeaturesCards)
+                {
+                    <div class="col-6 col-lg-3">
+                        <!-- icon box -->
+                        <div class="hotel-icon-box">
+                            <div class="hotel-counter-number hotel-mb-10"
+                                 data-count="@featuresCard.Count"></div>
+                            <h5>@featuresCard.Text</h5>
+                        </div>
+                        <!-- icon box end -->
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- features card end -->
+    </div>
+</section>
+<!-- counters end -->
+<!-- rooms -->
+<section class="hotel-transition-bottom" style="background-color: #fff">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="
+									hotel-center
+									hotel-title-frame
+									hotel-scroll-animation
+									hotel-mb-100
+								">
+                    <h2 class="hotel-mb-20">@Model.HomePageRoomSection.Heading</h2>
+                    <p class="hotel-mb-30">
+                        @Model.HomePageRoomSection.SubHeading
+                    </p>
+                    <a asp-controller="Room" asp-action="Index" class="hotel-btn hotel-btn-md">@Model.HomePageRoomSection.BtnText</a>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="swiper-container hotel-uni-slider">
+                    <div class="swiper-wrapper">
+                        @foreach (var room in Model.Rooms)
+                        {
+                            <div class="swiper-slide">
+                                <!-- room card -->
+                                <div class="hotel-room-card">
+                                    <div class="hotel-cover-frame imgLoad">
+                                        <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id"><img class="lozad" src="~/img/rooms/@room.Image" alt="cover"></a>
+                                        @if (room.Popular)
+                                        {
+                                            <div class="hotel-badge">Populyar</div>
+                                        }
+                                    </div>
+                                    <div class="hotel-description-frame">
+                                        <div class="hotel-room-features imgLoad">
+                                            <div class="hotel-feature">
+                                                <div class="hotel-icon-frame"><img class="lozad" src="~/img/icons/bed.svg" alt="icon"></div>
+                                                <span>@room.PersonCapacity Nəfərlik</span>
+                                            </div>
+                                            <div class="hotel-feature imgLoad">
+                                                <div class="hotel-icon-frame"><img class="lozad" src="~/img/icons/square.svg" alt="icon"></div>
+                                                <span>@room.Size Ft²</span>
+                                            </div>
+                                        </div>
+                                        <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id">
+                                            <h3 class="hotel-mb-20">@room.Name Otaq <br /> @Model.Hotels.FirstOrDefault(h => h.Id == room.HotelId).Name Hotel  </h3>
+                                        </a>
+                                        <div class="hotel-text-light hotel-text-sm hotel-mb-20">@room.Description</div>
+                                        <div class="hotel-card-bottom imgLoad">
+                                            <div class="hotel-price">@room.Price ₼ <span>/gecə</span></div>
+                                            <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id" class="hotel-btn"><img class="lozad" src="~/img/icons/bookmark.svg" alt="icon">Rezerv et</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- room card end -->
+                            </div>
+                        }
+
+                    </div>
+
+                    <!-- slider navigation -->
+                    <div class="hotel-uni-slider-nav-panel">
+                        <div class="hotel-uni-slider-pagination"></div>
+                        <div class="hotel-uni-nav">
+                            <div class="hotel-uni-slider-prev">
+                                <i class="fas fa-arrow-left"></i>
+                            </div>
+                            <div class="hotel-uni-slider-next">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slider navigation end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- rooms end -->
+<!-- testimonials -->
+<section class="hotel-transition-top hotel-p-0-80"
+         style="background-color: #fff; padding-top: 8rem">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="
+									hotel-center
+									hotel-title-frame
+									hotel-scroll-animation
+									hotel-mb-80
+								">
+                    <h2 class="hotel-mb-20">@Model.TestimonialsSection.Heading</h2>
+                    <p>
+                        @Model.TestimonialsSection.Description
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- slider -->
+                <div class="
+									swiper-slider
+									hotel-testimonials-slider hotel-scroll-animation
+								">
+                    <div class="swiper-wrapper">
+                            @foreach (var testimonial in Model.Testimonials)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="hotel-testimonial-card">
+                                        <div class="hotel-avatar-frame imgLoad">
+                                            <img class="lozad" src="~/img/faces/@testimonial.Image" alt="@testimonial.Name" />
+                                        </div>
+                                        <div class="hotel-name-and-text">
+                                            <h3 class="hotel-mb-10">Rahidə Mahmudova</h3>
+                                            <div>@testimonial.City</div>
+                                            <blockquote>
+                                                <ul class="hotel-stars">
+                                                    @for (int i = 0; i < testimonial.GivenRating; i++)
+                                                    {
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    }
+                                                </ul>
+                                                @testimonial.Comment
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        
+                    </div>
+                    <div class="hotel-testimonials-nav">
+                        <div class="hotel-testimonials-slider-1-prev">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div class="hotel-testimonials-slider-1-next">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- slider end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonials end -->
+<!-- popup -->
+<div class="hotel-popup-frame">
+    <div class="hotel-book-form hotel-book-popup">
+        <span class="hotel-close-popup">+</span>
+        <h2 class="hotel-mb-40">Giriş</h2>
+        <form>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hotel-input-frame">
+                        <label>Istifadəçi adı</label>
+                        <input type="text" />
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="hotel-input-frame">
+                        <label class="hotel-add-icon">Şifrə</label>
+                        <input type="password" />
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12 hotel-center imgLoad">
+                    <button type="submit" class="hotel-btn">
+                        <img class="lozad" src="~/img/icons/search.svg"
+                             class="hotel-zoom"
+                             alt="icon" />Giriş
+                    </button>
+                    <button type="submit" class="hotel-btn">
+                        <a href="#"><img class="lozad" src="~/img/icons/search.svg" class="hotel-zoom" alt="icon" />Qeydiyyat</a>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- popup end -->
