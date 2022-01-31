@@ -168,10 +168,6 @@ C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Area
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Update.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Layout\Create.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Layout\Delete.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Layout\Details.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Layout\Index.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidatePartial.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\SliderImg\Create.cshtml.g.cs
@@ -195,3 +191,14 @@ C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Area
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Room\Delete.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Room\Create.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Feature\Index.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Feature\Create.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Feature\Update.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Feature\Delete.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Service\Index.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Service\Create.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Service\Update.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Service\Delete.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Index.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Details.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Create.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Update.cshtml.g.cs

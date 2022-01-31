@@ -54,8 +54,29 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.FeatureViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.ServiceViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.TeamViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b98499352aad3c63b4c4eb2180289ca4d652e130", @"/Areas/Admin/Views/Hotel/Delete.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d124d5582bb14ac9d78beb8d3040015e87401d4", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d52559dbceab8af63cf8b857e635c31f7314e2d", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Hotel_Delete : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<HotelViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("width: 300px; height: 300px; object-fit: contain"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -118,7 +139,7 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("</h3>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b98499352aad3c63b4c4eb2180289ca4d652e1307979", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b98499352aad3c63b4c4eb2180289ca4d652e1308684", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -143,7 +164,7 @@ AddHtmlAttributeValue("", 283, Model.Image, 283, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            <br />\r\n            <h3>Are you sure you want to delete this Hotel</h3>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b98499352aad3c63b4c4eb2180289ca4d652e1309737", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b98499352aad3c63b4c4eb2180289ca4d652e13010442", async() => {
                 WriteLiteral("No");
             }
             );
@@ -160,7 +181,7 @@ AddHtmlAttributeValue("", 283, Model.Image, 283, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b98499352aad3c63b4c4eb2180289ca4d652e13010983", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b98499352aad3c63b4c4eb2180289ca4d652e13011689", async() => {
                 WriteLiteral("\r\n                <button class=\"btn btn-danger\" type=\"submit\">Yes</button>\r\n            ");
             }
             );

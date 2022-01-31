@@ -54,8 +54,29 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.FeatureViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.ServiceViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.TeamViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d5bd665cffbb0e7bd4b43b9bb46a56854a20e83", @"/Areas/Admin/Views/User/ChangeRole.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d124d5582bb14ac9d78beb8d3040015e87401d4", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d52559dbceab8af63cf8b857e635c31f7314e2d", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_User_ChangeRole : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<UserViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("font-size:1.3rem"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -107,7 +128,7 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n    <div class=\"col-md-6 grid-margin stretch-card\">\r\n                  <div class=\"card\">\r\n                    <div class=\"card-body\">\r\n                      <h4 class=\"card-title\">Change User Role</h4>\r\n                      ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e838472", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e839177", async() => {
                 WriteLiteral("\r\n                          <div class=\"form-group\">\r\n                              <h4><strong>Full Name</strong></h4>\r\n                              ");
 #nullable restore
 #line 14 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\User\ChangeRole.cshtml"
@@ -133,7 +154,7 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line hidden
 #nullable disable
                 WriteLiteral("\r\n                          </div>\r\n                          <div class=\"form-group\">\r\n                              ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8310170", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8310875", async() => {
                     WriteLiteral("<strong>Roles</strong>");
                 }
                 );
@@ -156,9 +177,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                              ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8311854", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8312559", async() => {
                     WriteLiteral("\r\n                                  ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8312157", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8312862", async() => {
                         WriteLiteral("--Select a Role--");
                     }
                     );
@@ -185,7 +206,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
 #line hidden
 #nullable disable
                     WriteLiteral("                                          ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8313930", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8314635", async() => {
 #nullable restore
 #line 32 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\User\ChangeRole.cshtml"
                                                                        Write(role.Name);
@@ -229,7 +250,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
 #line hidden
 #nullable disable
                     WriteLiteral("                                          ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8316652", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8317357", async() => {
 #nullable restore
 #line 36 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\User\ChangeRole.cshtml"
                                                               Write(role.Name);
@@ -290,7 +311,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                          </div>\r\n                          <button type=\"submit\" class=\"btn btn-primary me-2\">Submit</button>\r\n                          ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8320505", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d5bd665cffbb0e7bd4b43b9bb46a56854a20e8321210", async() => {
                     WriteLiteral("Cancel");
                 }
                 );

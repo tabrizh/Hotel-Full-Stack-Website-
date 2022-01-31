@@ -125,7 +125,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 65,
-                            HotelId = 21
+                            HotelId = 21,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -136,7 +137,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 250,
-                            HotelId = 21
+                            HotelId = 21,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -147,7 +149,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 250,
-                            HotelId = 21
+                            HotelId = 21,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -158,7 +161,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 450,
-                            HotelId = 21
+                            HotelId = 21,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -169,7 +173,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 6,
                             Size = 120,
                             Price = 950,
-                            HotelId = 21
+                            HotelId = 21,
+                            Number = 249
                         },
 
                         new Room()
@@ -181,7 +186,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 80,
-                            HotelId = 22
+                            HotelId = 22,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -192,7 +198,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 270,
-                            HotelId = 22
+                            HotelId = 22,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -203,7 +210,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 270,
-                            HotelId = 22
+                            HotelId = 22,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -214,7 +222,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 490,
-                            HotelId = 22
+                            HotelId = 22,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -225,7 +234,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 6,
                             Size = 120,
                             Price = 1120,
-                            HotelId = 22
+                            HotelId = 22,
+                            Number = 249
                         },
 
                         new Room()
@@ -237,7 +247,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 90,
-                            HotelId = 23
+                            HotelId = 23,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -248,7 +259,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 280,
-                            HotelId = 23
+                            HotelId = 23,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -259,7 +271,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 280,
-                            HotelId = 23
+                            HotelId = 23,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -270,7 +283,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 495,
-                            HotelId = 23
+                            HotelId = 23,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -281,7 +295,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 6,
                             Size = 120,
                             Price = 1140,
-                            HotelId = 23
+                            HotelId = 23,
+                            Number = 249
                         },
 
                         new Room()
@@ -293,7 +308,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 90,
-                            HotelId = 24
+                            HotelId = 24,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -304,7 +320,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 280,
-                            HotelId = 24
+                            HotelId = 24,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -315,7 +332,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 280,
-                            HotelId = 24
+                            HotelId = 24,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -326,7 +344,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 495,
-                            HotelId = 24
+                            HotelId = 24,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -337,7 +356,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 6,
                             Size = 120,
                             Price = 1140,
-                            HotelId = 24
+                            HotelId = 24,
+                            Number = 249
                         },
 
                         new Room()
@@ -349,7 +369,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 90,
-                            HotelId = 25
+                            HotelId = 25,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -360,7 +381,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 280,
-                            HotelId = 25
+                            HotelId = 25,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -371,7 +393,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 280,
-                            HotelId = 25
+                            HotelId = 25,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -382,7 +405,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 495,
-                            HotelId = 25
+                            HotelId = 25,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -393,7 +417,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 6,
                             Size = 120,
                             Price = 1140,
-                            HotelId = 25
+                            HotelId = 25,
+                            Number = 249
                         },
 
                         new Room()
@@ -405,7 +430,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 90,
-                            HotelId = 26
+                            HotelId = 26,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -416,7 +442,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 280,
-                            HotelId = 26
+                            HotelId = 26,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -427,7 +454,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 280,
-                            HotelId = 26
+                            HotelId = 26,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -438,7 +466,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 495,
-                            HotelId = 26
+                            HotelId = 26,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -449,7 +478,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 6,
                             Size = 120,
                             Price = 1140,
-                            HotelId = 26
+                            HotelId = 26,
+                            Number = 249
                         },
 
                         new Room()
@@ -461,7 +491,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 90,
-                            HotelId = 27
+                            HotelId = 27,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -472,7 +503,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 280,
-                            HotelId = 27
+                            HotelId = 27,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -483,7 +515,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 280,
-                            HotelId = 27
+                            HotelId = 27,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -494,7 +527,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 495,
-                            HotelId = 27
+                            HotelId = 27,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -505,7 +539,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 6,
                             Size = 120,
                             Price = 1140,
-                            HotelId = 27
+                            HotelId = 27,
+                            Number = 249
                         },
 
                         new Room()
@@ -517,7 +552,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 60,
-                            HotelId = 28
+                            HotelId = 28,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -528,7 +564,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 100,
-                            HotelId = 28
+                            HotelId = 28,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -539,7 +576,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 100,
-                            HotelId = 28
+                            HotelId = 28,
+                            Number = 248
                         },
                         new Room()
                         {
@@ -550,7 +588,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 150,
-                            HotelId = 28
+                            HotelId = 28,
+                            Number = 249
                         },
 
                         new Room()
@@ -562,7 +601,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 70,
-                            HotelId = 29
+                            HotelId = 29,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -573,7 +613,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 90,
-                            HotelId = 29
+                            HotelId = 29,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -584,7 +625,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 90,
-                            HotelId = 29
+                            HotelId = 29,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -595,7 +637,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 240,
-                            HotelId = 29
+                            HotelId = 29,
+                            Number = 248
                         },
 
                         new Room()
@@ -607,7 +650,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 1,
                             Size = 40,
                             Price = 20,
-                            HotelId = 30
+                            HotelId = 30,
+                            Number = 245
                         },
                         new Room()
                         {
@@ -618,7 +662,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 2,
                             Size = 70,
                             Price = 40,
-                            HotelId = 30
+                            HotelId = 30,
+                            Number = 246
                         },
                         new Room()
                         {
@@ -629,7 +674,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 3,
                             Size = 70,
                             Price = 40,
-                            HotelId = 30
+                            HotelId = 30,
+                            Number = 247
                         },
                         new Room()
                         {
@@ -640,7 +686,8 @@ namespace MVCFinalProject.Data
                             PersonCapacity = 4,
                             Size = 90,
                             Price = 90,
-                            HotelId = 30
+                            HotelId = 30,
+                            Number = 248
                         },
                     });
                     context.SaveChanges();

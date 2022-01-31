@@ -8,6 +8,7 @@ namespace MVCFinalProject.Models.Entities
     public class Comment : BaseEntity
     {
         public string FullName { get; set; }
+        public string Email { get; set; }
         public string Image { get; set; }
         public byte GivenStars { get; set; }
         public DateTime Date { get; set; }

@@ -10,6 +10,8 @@ namespace MVCFinalProject.Models.Entities
     {
         public Room Room { get; set; }
         public int RoomId { get; set; }
+        public int RoomNumber { get; set; }
+        public int HotelId { get; set; }
         public User User { get; set; }
         public string UserId { get; set; }
         public decimal Price { get; set; }

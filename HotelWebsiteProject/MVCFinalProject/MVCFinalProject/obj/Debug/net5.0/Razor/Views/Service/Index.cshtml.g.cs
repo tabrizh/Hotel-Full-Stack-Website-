@@ -33,8 +33,15 @@ using MVCFinalProject.Views.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Views\_ViewImports.cshtml"
+using MVCFinalProject.Data.Roles;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8800eb1e91b609090298b1bf992655c9cf29ebf8", @"/Views/Service/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0173fc7b816fde1204b02a35cf7e90e91ef1bcc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6bac922a54b4b8b0a5c9e0768bb8da98ea9c129e", @"/Views/_ViewImports.cshtml")]
     public class Views_Service_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ServicePageViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -104,7 +111,7 @@ WriteAttributeValue("", 184, Model.ServicePageBannerSection.BgImage, 184, 39, fa
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                    <ul class=\"hotel-breadcrumbs\">\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8800eb1e91b609090298b1bf992655c9cf29ebf86320", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8800eb1e91b609090298b1bf992655c9cf29ebf86514", async() => {
                 WriteLiteral("Ana Səhifə");
             }
             );
@@ -171,7 +178,7 @@ WriteAttributeValue("", 184, Model.ServicePageBannerSection.BgImage, 184, 39, fa
 #line hidden
 #nullable disable
             WriteLiteral("                <div class=\"col-lg-4\">\r\n\r\n                    <!-- service card -->\r\n                    <div class=\"hotel-ath-card hotel-scroll-animation imgLoad\">\r\n                        <div class=\"hotel-cover-frame\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8800eb1e91b609090298b1bf992655c9cf29ebf89656", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8800eb1e91b609090298b1bf992655c9cf29ebf89850", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

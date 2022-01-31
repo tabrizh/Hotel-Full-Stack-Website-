@@ -1,0 +1,43 @@
+﻿@model ServiceCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <h4 class="card-title">Create a New Service</h4>
+                    <form class="forms-sample" method="post" asp-area="Admin" asp-controller="Service" asp-action="Create" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label asp-for="Name">Name</label>
+                            <input class="form-control" asp-for="Name" placeholder="Name">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Description">Description</label>
+                            <input class="form-control" asp-for="Description" placeholder="Description">
+                            <span class="text-danger" asp-validation-for="Description"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Image">Image</label>
+                            <input class="form-control" asp-for="Image" accept="image/*">
+                            <span class="text-danger" asp-validation-for="Image"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a asp-action="Index" class="btn btn-light">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidatePartial" />
+}
+

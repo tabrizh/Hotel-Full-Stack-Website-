@@ -11,6 +11,7 @@ namespace MVCFinalProject.Models.Account
     public class User : IdentityUser
     {
         public string FullName { get; set; }
+        public string Image { get; set; }
         public ICollection<Reservations> Reservations { get; set; }
     }
 }

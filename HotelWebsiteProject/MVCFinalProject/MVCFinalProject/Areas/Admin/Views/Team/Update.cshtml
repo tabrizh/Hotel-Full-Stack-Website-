@@ -1,0 +1,59 @@
+﻿@model TeamUpdateViewModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <h4 class="card-title">Update a Team Membet</h4>
+                    <img style="width: 230px; height: 300px; object-fit: contain;" src="~/img/team/@Model.Image" />
+                    <form class="forms-sample" method="post" asp-area="Admin" asp-controller="Team" asp-action="Update" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label asp-for="Name">Name</label>
+                            <input class="form-control" asp-for="Name" placeholder="Name">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FacebookLink">Facebook Link</label>
+                            <input class="form-control" asp-for="FacebookLink" placeholder="Facebook Link">
+                            <span class="text-danger" asp-validation-for="FacebookLink"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="InstagramLink">Instagram Link</label>
+                            <input class="form-control" asp-for="InstagramLink" placeholder="Instagram Link">
+                            <span class="text-danger" asp-validation-for="InstagramLink"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TwitterLink">Instagram Link</label>
+                            <input class="form-control" asp-for="InstagramLink" placeholder="Instagram Link">
+                            <span class="text-danger" asp-validation-for="InstagramLink"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="YoutubeLink">Youtube Link</label>
+                            <input class="form-control" asp-for="YoutubeLink" placeholder="YoutubeLink">
+                            <span class="text-danger" asp-validation-for="YoutubeLink"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="File">Image</label>
+                            <input class="form-control" asp-for="File" accept="image/*">
+                            <span class="text-danger" asp-validation-for="File"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a asp-action="Index" class="btn btn-light">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidatePartial" />
+}
+

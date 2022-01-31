@@ -12,7 +12,7 @@ using MVCFinalProject.Data.Roles;
 namespace MVCFinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = RoleConstants.Admin)]
+    [Authorize(Roles = RoleConstants.Admin+","+RoleConstants.Moderator+","+RoleConstants.Hotel)]
     public class DashboardController : Controller
     {
         private readonly UserManager<User> _userManager;

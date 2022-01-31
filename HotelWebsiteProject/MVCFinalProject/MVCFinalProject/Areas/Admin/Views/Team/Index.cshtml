@@ -1,0 +1,42 @@
+﻿@model List<TeamViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Team Members List</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    <th>Job Title</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var team in Model)
+                                {
+                                    <tr>
+                                        <td><strong>@team.Name</strong></td>
+                                        <td><img style="width: 150px; height: 150px; border-radius: 0; object-fit: cover;" src="~/img/team/@team.Image" /></td>
+                                        <td>@team.JobTitle</td>
+                                        <td><a class="btn btn-success" asp-controller="Team" asp-action="Details" asp-route-id="@team.Id">Details</a></td>
+                                        <td><a class="btn btn-success" asp-controller="Team" asp-action="Update" asp-route-id="@team.Id">Update</a></td>
+                                        <td><a class="btn btn-danger" asp-controller="Team" asp-action="Delete" asp-route-id="@team.Id">Delete</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

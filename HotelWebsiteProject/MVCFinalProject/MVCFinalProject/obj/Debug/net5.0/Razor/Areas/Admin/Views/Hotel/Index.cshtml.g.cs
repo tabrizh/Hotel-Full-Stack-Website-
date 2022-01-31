@@ -54,8 +54,29 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.FeatureViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.ServiceViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.TeamViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda", @"/Areas/Admin/Views/Hotel/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d124d5582bb14ac9d78beb8d3040015e87401d4", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d52559dbceab8af63cf8b857e635c31f7314e2d", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Hotel_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<HotelViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("width: 150px; height: 150px;"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -137,7 +158,7 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("</strong></td>\r\n                                    <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda8692", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda9397", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -193,7 +214,7 @@ AddHtmlAttributeValue("", 1254, hotel.Image, 1254, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                    <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda11570", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda12275", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -227,7 +248,7 @@ AddHtmlAttributeValue("", 1254, hotel.Image, 1254, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n                                    <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda14140", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda14845", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -261,7 +282,7 @@ AddHtmlAttributeValue("", 1254, hotel.Image, 1254, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n                                    <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda16708", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c3f6248dd91a4a2ac608f4fd202a76cd5da4bda17413", async() => {
                 WriteLiteral("Delete");
             }
             );

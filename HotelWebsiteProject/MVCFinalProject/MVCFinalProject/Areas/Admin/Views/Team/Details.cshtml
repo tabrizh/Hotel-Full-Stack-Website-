@@ -1,0 +1,21 @@
+﻿@model TeamViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card mb-3">
+    <h3>Profile Picture</h3>
+    <img class="card-img-top" style="width: 500px; height: 500px; object-fit: contain; margin-left: 70px;" src="~/img/team/@Model.Image" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text"><strong>Job Title:</strong> @Model.JobTitle</p>
+        <p class="card-text"><strong>Facebook Url:</strong> @Model.FacebookLink</p>
+        <p class="card-text"><strong>Instagram Url:</strong> @Model.InstagramLink</p>
+        <p class="card-text"><strong>Twitter Url:</strong> @Model.TwitterLink</p>
+        <p class="card-text"><strong>Youube Url:</strong> @Model.YoutubeLink</p>
+    </div>
+
+    <a class="btn btn-success" asp-area="Admin" asp-controller="Room" asp-action="Update" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-danger" asp-area="Admin" asp-controller="Room" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+</div>
+

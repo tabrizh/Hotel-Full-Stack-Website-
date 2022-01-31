@@ -33,8 +33,15 @@ using MVCFinalProject.Views.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Views\_ViewImports.cshtml"
+using MVCFinalProject.Data.Roles;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e354fce0b708edc8bf1dcba10d43f0abba123218", @"/Views/Contact/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0173fc7b816fde1204b02a35cf7e90e91ef1bcc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6bac922a54b4b8b0a5c9e0768bb8da98ea9c129e", @"/Views/_ViewImports.cshtml")]
     public class Views_Contact_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ContactPageViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -99,7 +106,7 @@ using MVCFinalProject.Views.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                    <ul class=\"hotel-breadcrumbs\">\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e354fce0b708edc8bf1dcba10d43f0abba1232185779", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e354fce0b708edc8bf1dcba10d43f0abba1232185973", async() => {
                 WriteLiteral("Ana Səhifə");
             }
             );
@@ -203,7 +210,7 @@ using MVCFinalProject.Views.ViewModels;
         <div class=""row"">
             <div class=""col-lg-12"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e354fce0b708edc8bf1dcba10d43f0abba1232189908", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e354fce0b708edc8bf1dcba10d43f0abba12321810102", async() => {
                 WriteLiteral(@"
                     <div class=""row"">
                         <div class=""col-lg-6"">

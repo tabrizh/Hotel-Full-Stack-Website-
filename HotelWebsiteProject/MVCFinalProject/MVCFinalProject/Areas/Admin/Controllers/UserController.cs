@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace MVCFinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = RoleConstants.Admin + "," + RoleConstants.Moderator)]
     public class UserController : Controller
     {
         private readonly AppDbContext _context;
@@ -38,6 +38,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 usersList.Add(new UserViewModel
                 {
                     Id = user.Id,
+                    Image = user.Image,
                     FullName = user.FullName,
                     UserName = user.UserName,
                     Email = user.Email,

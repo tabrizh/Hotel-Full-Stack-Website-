@@ -54,8 +54,29 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.FeatureViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.ServiceViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\Areas\Admin\Views\_ViewImports.cshtml"
+using MVCFinalProject.Areas.Admin.ViewModels.TeamViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"09aa2b9412a1c2809c677d37dbea6d495fb66f43", @"/Areas/Admin/Views/Hotel/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d124d5582bb14ac9d78beb8d3040015e87401d4", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d52559dbceab8af63cf8b857e635c31f7314e2d", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Hotel_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<HotelViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-img-top"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -95,7 +116,7 @@ using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"card mb-3\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "09aa2b9412a1c2809c677d37dbea6d495fb66f435864", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "09aa2b9412a1c2809c677d37dbea6d495fb66f436569", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -179,7 +200,7 @@ AddHtmlAttributeValue("", 217, Model.Image, 217, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("            <div class=\"card mb-5\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "09aa2b9412a1c2809c677d37dbea6d495fb66f4310006", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "09aa2b9412a1c2809c677d37dbea6d495fb66f4310711", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

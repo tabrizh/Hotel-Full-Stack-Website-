@@ -10,7 +10,7 @@ namespace MVCFinalProject.Models.Entities
         public string Name { get; set; }
         public string? Image { get; set; }
         public string? Category { get; set; }
-        public byte Count { get; set; } = 10;
+        public int Number { get; set; }
         public string Description { get; set; }
         public byte PersonCapacity { get; set; }
         public int Size { get; set; }

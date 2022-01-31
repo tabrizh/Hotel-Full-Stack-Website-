@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MVCFinalProject.Areas.Admin.Constants;
+using MVCFinalProject.Areas.Admin.Utilities;
 using MVCFinalProject.Data.Roles;
 using MVCFinalProject.Models.Account;
 using MVCFinalProject.Views.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -48,6 +51,26 @@ namespace MVCFinalProject.Controllers
                 FullName = model.FullName,
                 Email = model.Email
             };
+
+            if (model.Image != null)
+            {
+                if (!model.Image.IsImage())
+                {
+                    ModelState.AddModelError(nameof(RegisterViewModel.Image), "File is not supported");
+                    return View();
+                }
+
+                if (model.Image.IsGreaterThanGivenSize(2000))
+                {
+                    ModelState.AddModelError(nameof(RegisterViewModel.Image), "File size cannot be more than 2mb");
+                    return View();
+                }
+
+                var imageName = FileUtility.CreateFile(Path.Combine(FileConstants.ImagePath, "faces"), model.Image);
+                user.Image = imageName;
+            }
+
+           
 
             var identityResult = await _userManager.CreateAsync(user, model.Password);
 

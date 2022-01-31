@@ -191,6 +191,8 @@
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basic">
+                            @if (User.IsInRole(RoleConstants.Admin) || User.IsInRole(RoleConstants.Moderator))
+                            {
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Hotel" asp-action="Index">Hotels</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Hotel" asp-action="Create">Create a New Hotel</a></li>
@@ -198,51 +200,38 @@
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Room" asp-action="Create">Create a New Room</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Feature" asp-action="Index">Features</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Feature" asp-action="Create">Create a New Feature</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Service" asp-action="Index">Service</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Service" asp-action="Create">Create a New Service</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Team" asp-action="Index">Team</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Team" asp-action="Create">Create a New Team Member</a></li>
                             </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/forms/basic_elements.html">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">Form elements</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/charts/chartjs.html">
-                            <i class="mdi mdi-chart-pie menu-icon"></i>
-                            <span class="menu-title">Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/tables/basic-table.html">
-                            <i class="mdi mdi-grid-large menu-icon"></i>
-                            <span class="menu-title">Tables</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/icons/mdi.html">
-                            <i class="mdi mdi-emoticon menu-icon"></i>
-                            <span class="menu-title">Icons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                            <i class="mdi mdi-account menu-icon"></i>
-                            <span class="menu-title">Users</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="auth">
+                            }
+                            @if (User.IsInRole(RoleConstants.Hotel))
+                            {
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">Users List</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Hotel" asp-action="Index">Hotels</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Hotel" asp-action="Create">Create a New Hotel</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Room" asp-action="Index">Rooms</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Room" asp-action="Create">Create a New Room</a></li>
                             </ul>
+                            }
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="documentation/documentation.html">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Documentation</span>
-                        </a>
-                    </li>
+                    @if (User.IsInRole(RoleConstants.Admin) || User.IsInRole(RoleConstants.Moderator))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                                <i class="mdi mdi-account menu-icon"></i>
+                                <span class="menu-title">Users</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="auth">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">Users List</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    }
                 </ul>
             </nav>
             @RenderBody()

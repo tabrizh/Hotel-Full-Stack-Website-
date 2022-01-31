@@ -10,6 +10,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <th>Image</th>
                                     <th>Full Name</th>
                                     <th>User Name</th>
                                     <th>Email</th>
@@ -23,6 +24,7 @@
                                     @foreach (var user in Model)
                                     {
                                         <tr>
+                                            <td><img style="width:150px; height:150px; border-radius:50%" src="~/img/faces/@user.Image"/></td>
                                             <td>@user.FullName</td>
                                             <td>@user.UserName</td>
                                             <td>@user.Email</td>

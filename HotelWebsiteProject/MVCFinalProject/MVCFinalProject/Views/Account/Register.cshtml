@@ -21,7 +21,7 @@
                 <div class="user signupBox">
                     <div class="formBox">
                         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-                        <form method="post" asp-action="Register">
+                        <form method="post" enctype="multipart/form-data" asp-action="Register">
                             <h2>Hesab aç</h2>
                             <input asp-for="FullName" placeholder="Adınız və Soyadınız">
                             <span class="text-danger" asp-validation-for="FullName"></span>
@@ -33,6 +33,11 @@
                             <span class="text-danger" asp-validation-for="Password"></span>
                             <input asp-for="ConfirmPassword" placeholder="Şifrə (təkrar)">
                             <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                            <div class="form-group">
+                                <label asp-for="Image">Image</label>
+                                <input style="height:46px;" class="form-control" asp-for="Image" accept="image/*">
+                                <span class="text-danger" asp-validation-for="Image"></span>
+                            </div>
                             <input type="submit" value="Qeydiyyatdan keç" style="max-width: 200px;">
                             <p class="signup">Giriş ekranına <a asp-action="Login">geri qayıt</a></p>
                         </form>

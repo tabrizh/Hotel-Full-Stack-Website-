@@ -194,14 +194,17 @@
                                                 }
 
                                             </ul>
+                                            @if ((User.IsInRole("Admin")) || (User.IsInRole("Moderator")))
+                                            {
+                                                <a class="btn btn-danger" asp-action="DeleteComment" asp-route-id="@comment.Id">Delete</a>
+                                            }
                                         </div>
                                         <blockquote>
                                             @comment.CommentText
                                         </blockquote>
-
                                     </div>
-
                                 </div>
+                                
                             }
 
                         </div>
@@ -213,29 +216,79 @@
                             <div class="col-lg-12">
                                 <h3 class="hotel-mb-40 hotel-scroll-animation">Rəy Bildirin</h3>
                             </div>
-                            <div class="col-lg-12">
-                                <form class="hotel-scroll-animation">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <input type="text" placeholder="Adınız">
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <input type="email" placeholder="Email">
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <textarea name="name" rows="8" placeholder="Şərh"></textarea>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="hotel-form-submit-frame">
-                                                <!-- temporary button to show the popup -->
-                                                <a class="hotel-btn" data-fancybox href="#hotel-success">Göndər</a>
-                                                <!-- <button class="hotel-btn">Send</button> -->
-                                                <div class="hotel-text-sm">*Şəxsi məlumatlarınızı üçüncü tərəflərə açıqlamayacağımıza söz veririk..</div>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <div class="col-lg-12">
+                                    <form class="hotel-scroll-animation" method="post" asp-controller="Room" asp-action="Comment">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label asp-for="CommentViewModel.FullName"></label>
+                                                <input type="text" placeholder="Adınız" asp-for="CommentViewModel.FullName">
+                                                <span class="text-danger" asp-validation-for="CommentViewModel.FullName"></span>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label asp-for="CommentViewModel.Email"></label>
+                                                <input type="text" placeholder="Email" asp-for="CommentViewModel.Email">
+                                                <span class="text-danger" asp-validation-for="CommentViewModel.Email"></span>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label asp-for="CommentViewModel.GivenStars">Stars</label>
+                                                <select class="form-select" asp-for="CommentViewModel.GivenStars">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5" selected focus>5</option>
+                                                </select>
+                                                <span class="text=danger" asp-validation-for="CommentViewModel.GivenStars"></span>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label asp-for="CommentViewModel.CommentText"></label>
+                                                <textarea rows="8" type="text" placeholder="Şərh" asp-for="CommentViewModel.CommentText"></textarea>
+                                                <span class="text-danger" asp-validation-for="CommentViewModel.CommentText"></span>
+                                            </div>
+                                            <input asp-for="CommentViewModel.RoomId" value="@Model.RoomDetailsViewModel.Id" hidden/>
+                                            <div class="col-lg-12">
+                                                <div class="hotel-form-submit-frame">
+                                                    <!-- temporary button to show the popup -->
+                                                    <button type="submit" class="hotel-btn" data-fancybox">Göndər</button>
+                                                    <!-- <button class="hotel-btn">Send</button> -->
+                                                    <div class="hotel-text-sm">*Şəxsi məlumatlarınızı üçüncü tərəflərə açıqlamayacağımıza söz veririk..</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>
+                                    </form>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-lg-12">
+                                    <form class="hotel-scroll-animation">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label></label>
+                                                <input type="text" placeholder="Adınız" disabled>
+                                                <span class="text-danger"></span>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label></label>
+                                                <input type="text" placeholder="Email" disabled>
+                                                <span class="text-danger"></span>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label></label>
+                                                <textarea rows="8" type="text" placeholder="Şərh" disabled></textarea>
+                                                <span class="text-danger"></span>
+                                            </div>
+                                            <div class="col-lg-12 d-flex flex-column align-items-center">
+                                                <a asp-controller="Account" asp-action="Login" class="hotel-btn"><img src="~/img/icons/search.svg" class="hotel-zoom" alt="icon">Giriş Et</a>
+                                                <p class="signup">Hesabınız yoxdur? O zaman <a asp-controller="Account" asp-action="Register">Qedyiyyatdan keçin</a></p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
+
                         </div>
                     </section>
 
@@ -270,14 +323,14 @@
                                             <label for="check-in">Giriş</label>
                                             <input id="check-in" type="text" asp-for="BookingsViewModel.StartDate" class="datepicker-here" data-position="bottom left" placeholder="Tarix Seçin" autocomplete="off">
                                         </div>
-                                            <span class="text-danger" asp-validation-for="BookingsViewModel.StartDate"></span>
+                                        <span class="text-danger" asp-validation-for="BookingsViewModel.StartDate"></span>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="hotel-input-frame">
                                             <label for="check-out" class="hotel-add-icon">Çıxış</label>
                                             <input id="check-out" type="text" asp-for="BookingsViewModel.EndDate" class="datepicker-here" data-position="bottom left" placeholder="Tarix Seçin" autocomplete="off">
                                         </div>
-                                            <span class="text-danger" asp-validation-for="BookingsViewModel.EndDate"></span>
+                                        <span class="text-danger" asp-validation-for="BookingsViewModel.EndDate"></span>
                                     </div>
                                     <div class="col-6">
                                         <div class="hotel-select-frame">
@@ -327,3 +380,23 @@
     <!-- room end -->
 
     <partial name="_ValidationScriptsPartial" />
+
+
+    <script>
+        $(function () {
+            2
+            $("#review").rating();
+            3
+        });
+        $("#basic").rating({
+            "click": function (e) {
+                console.log(e); // {stars: 3, event: E.Event}
+                alert(e.stars); // 3
+            }
+        });
+        $("#basic").rating({
+            "emptyStar": "far fa-star",
+            "halfStar": "fas fa-star-half-alt",
+            "filledStar": "fas fa-star"
+        });
+    </script>

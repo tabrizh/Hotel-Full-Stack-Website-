@@ -9,5 +9,6 @@ namespace MVCFinalProject.Views.ViewModels
     {
         public RoomDetailsViewModel RoomDetailsViewModel { get; set; }
         public BookingsViewModel BookingsViewModel { get; set; }
+        public CommentViewModel CommentViewModel { get; set; }
     }
 }

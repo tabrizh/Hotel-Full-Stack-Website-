@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCFinalProject.Areas.Admin.Constants;
 using MVCFinalProject.Areas.Admin.Utilities;
 using MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels;
 using MVCFinalProject.Data;
+using MVCFinalProject.Data.Roles;
 using MVCFinalProject.Models.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ using System.Threading.Tasks;
 namespace MVCFinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = RoleConstants.Admin + "," + RoleConstants.Moderator + "," + RoleConstants.Hotel)]
     public class RoomController : Controller
     {
         private readonly AppDbContext _context;
@@ -37,7 +40,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                     Name = room.Name,
                     Description = room.Description,
                     Image = room.Image,
-                    Count = room.Count,
+                    Number = room.Number,
                     PersonCapacity = room.PersonCapacity,
                     Size = room.Size,
                     Price = room.Price,
@@ -63,7 +66,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 Name = contextRoom.Name,
                 Description = contextRoom.Description,
                 Image = contextRoom.Image,
-                Count = contextRoom.Count,
+                Number = contextRoom.Number,
                 PersonCapacity = contextRoom.PersonCapacity,
                 Size = contextRoom.Size,
                 Price = contextRoom.Price,
@@ -110,7 +113,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 Description = model.Description,
                 Size = model.Size,
                 Price = model.Price,
-                Count = model.Count,
+                Number = model.Number,
                 HotelId = model.HotelId,
                 IsAvailable = model.IsAvailable,
                 PersonCapacity = model.PersonCapacity,
@@ -195,7 +198,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 Price = dbRoom.Price,
                 Popular = dbRoom.Popular,
                 IsAvailable = dbRoom.IsAvailable,
-                Count = dbRoom.Count,
+                Number = dbRoom.Number,
                 HotelId = dbRoom.HotelId,
                 Hotels = await _context.Hotels.Where(hh => !hh.IsDeleted).ToListAsync(),
                 Features = await _context.Features.Where(ff => !ff.IsDeleted).ToListAsync(),
@@ -225,7 +228,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 Price = dbRoom.Price,
                 Popular = dbRoom.Popular,
                 IsAvailable = dbRoom.IsAvailable,
-                Count = dbRoom.Count,
+                Number = dbRoom.Number,
                 HotelId = dbRoom.HotelId,
                 Hotels = await _context.Hotels.Where(hh => !hh.IsDeleted).ToListAsync(),
                 Features = await _context.Features.Where(ff => !ff.IsDeleted).ToListAsync(),
@@ -241,7 +244,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
             dbRoom.Size = model.Size;
             dbRoom.Popular = model.Popular;
             dbRoom.IsAvailable = model.IsAvailable;
-            dbRoom.Count = model.Count;
+            dbRoom.Number = model.Number;
             dbRoom.Price = model.Price;
 
             var selectedHotel = await _context.Hotels.FirstOrDefaultAsync(hh => !hh.IsDeleted && hh.Id == model.HotelId);
@@ -361,7 +364,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 Name = contextRoom.Name,
                 Description = contextRoom.Description,
                 Image = contextRoom.Image,
-                Count = contextRoom.Count,
+                Number = contextRoom.Number,
                 PersonCapacity = contextRoom.PersonCapacity,
                 Size = contextRoom.Size,
                 Price = contextRoom.Price,
@@ -404,7 +407,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                     Name = contextRoom.Name,
                     Description = contextRoom.Description,
                     Image = contextRoom.Image,
-                    Count = contextRoom.Count,
+                    Number = contextRoom.Number,
                     PersonCapacity = contextRoom.PersonCapacity,
                     Size = contextRoom.Size,
                     Price = contextRoom.Price,

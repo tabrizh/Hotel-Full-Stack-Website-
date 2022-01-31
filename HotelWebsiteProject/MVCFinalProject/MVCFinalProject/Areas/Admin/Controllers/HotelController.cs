@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCFinalProject.Areas.Admin.Constants;
 using MVCFinalProject.Areas.Admin.Utilities;
 using MVCFinalProject.Areas.Admin.ViewModels.HotelViewModels;
 using MVCFinalProject.Data;
+using MVCFinalProject.Data.Roles;
 using MVCFinalProject.Models.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ using System.Threading.Tasks;
 namespace MVCFinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = RoleConstants.Admin + "," + RoleConstants.Moderator + "," + RoleConstants.Hotel)]
     public class HotelController : Controller
     {
         private readonly AppDbContext _context;

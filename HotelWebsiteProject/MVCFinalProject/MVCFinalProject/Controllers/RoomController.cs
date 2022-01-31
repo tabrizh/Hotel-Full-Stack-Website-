@@ -46,9 +46,13 @@ namespace MVCFinalProject.Controllers
             
             if (dbRoom == null) return NotFound();
 
+            var userId = User.Identity.GetUserId();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+
             RoomBookingViewModel roomVM = new RoomBookingViewModel();
-            roomVM.RoomDetailsViewModel = (new RoomDetailsViewModel
+            roomVM.RoomDetailsViewModel = new RoomDetailsViewModel
             {
+                Id = dbRoom.Id,
                 Name = dbRoom.Name,
                 Description = dbRoom.Description,
                 PersonCapacity = dbRoom.PersonCapacity,
@@ -59,10 +63,19 @@ namespace MVCFinalProject.Controllers
                 HowManyAvailable = dbRoom.HowManyAvailable,
                 Hotel = await _context.Hotels.FindAsync(dbRoom.HotelId),
                 Images = await _context.RoomImages.Where(i => i.RoomId == dbRoom.Id && !i.IsDeleted).ToListAsync(),
-                Comments = await _context.Comments.Where(c => c.RoomId == dbRoom.Id).ToListAsync(),
+                Comments = await _context.Comments.Where(c => c.RoomId == dbRoom.Id && !c.IsDeleted).ToListAsync(),
                 Features = await _context.RoomFeatures.Where(rf => rf.RoomId == dbRoom.Id && !rf.IsDeleted).Select(f => f.Features).ToListAsync(),
                 Services = await _context.RoomServices.Where(rs => rs.RoomId == dbRoom.Id && !rs.IsDeleted).Select(s => s.Service).ToListAsync(),
-            });
+            };
+
+            if (User.Identity.IsAuthenticated)
+            {
+                roomVM.CommentViewModel = new CommentViewModel
+                {
+                    FullName = user.FullName,
+                    Email = user.Email
+                };
+            }
 
             return View(roomVM);
         }
@@ -121,11 +134,32 @@ namespace MVCFinalProject.Controllers
             var room = await _context.Rooms.FirstOrDefaultAsync(r => r.Id == id && !r.IsDeleted && r.IsAvailable);
             if (room == null) return NotFound();
 
+            var bookedRoom = await _context.Rooms.FirstOrDefaultAsync(rr => rr.HotelId == room.HotelId && rr.Name == room.Name && !rr.IsDeleted);
+            if (bookedRoom == null)
+            {
+                TempData["Fail"] = "Seçdiyiniz kateqoriyada seçdiyiniz tarixlərdə otaq mövcud deyil";
+                return View(roomVM);
+            }
+
+            var roomReservations = await _context.Reservations.Include(r => r.Room).Where(rr => rr.Room.Name == bookedRoom.Name && rr.HotelId == room.HotelId).ToListAsync();
+
+            foreach (var reserv in roomReservations)
+            {
+                if (reserv.EndDate! < start || reserv.StartDate! > end)
+                {
+                    TempData["Fail"] = "Seçdiyiniz kateqoriyada seçdiyiniz tarixlərdə otaq mövcud deyil";
+                    return View(roomVM);
+                }
+            }
+            
+
             if (!User.Identity.IsAuthenticated) return BadRequest();
 
             Reservations reservations = new Reservations
             {
-                RoomId = room.Id,
+                RoomId = bookedRoom.Id,
+                RoomNumber = bookedRoom.Number,
+                HotelId = bookedRoom.HotelId,
                 UserId = _userManager.GetUserId(User),
                 StartDate = start,
                 EndDate = end,
@@ -204,6 +238,44 @@ namespace MVCFinalProject.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Comment(RoomBookingViewModel model)
+        {
+            if (!User.Identity.IsAuthenticated) return BadRequest();
+
+            var userId = User.Identity.GetUserId();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null) return NotFound();
+
+            Comment comment = new Comment
+            {
+                FullName = model.CommentViewModel.FullName,
+                Email = model.CommentViewModel.Email,
+                GivenStars = model.CommentViewModel.GivenStars,
+                CommentText = model.CommentViewModel.CommentText,
+                Date = DateTime.Now,
+                RoomId = model.CommentViewModel.RoomId,
+                Image = user.Image
+            };
+
+            await _context.Comments.AddAsync(comment);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { id = model.CommentViewModel.RoomId});
+        }
+
+        public async Task<IActionResult> DeleteComment(int id)
+        {
+            var comment = await _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
+            comment.IsDeleted = true;
+
+            _context.Comments.Update(comment);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { id = comment.RoomId});
         }
     }
 }

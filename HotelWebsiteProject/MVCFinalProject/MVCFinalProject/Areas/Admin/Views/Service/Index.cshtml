@@ -1,0 +1,41 @@
+﻿@model List<ServiceViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Services List</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var service in Model)
+                                {
+                                    <tr>
+                                        <td><strong>@service.Name</strong></td>
+                                        <td><img style="width: 150px; height: 150px; border-radius: 0; object-fit: cover;" src="~/img/services/@service.Image" /></td>
+                                        <td>@service.Description</td>
+                                        <td><a class="btn btn-success" asp-controller="Service" asp-action="Update" asp-route-id="@service.Id">Update</a></td>
+                                        <td><a class="btn btn-danger" asp-controller="Service" asp-action="Delete" asp-route-id="@service.Id">Delete</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

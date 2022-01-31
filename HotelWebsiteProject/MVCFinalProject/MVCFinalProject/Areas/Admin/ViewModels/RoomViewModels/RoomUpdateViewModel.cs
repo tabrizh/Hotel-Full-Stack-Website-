@@ -17,7 +17,7 @@ namespace MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels
         public IFormFile Image { get; set; }
 
         [Required]
-        public byte Count { get; set; }
+        public int Number { get; set; }
 
         [Required]
         public string Description { get; set; }
