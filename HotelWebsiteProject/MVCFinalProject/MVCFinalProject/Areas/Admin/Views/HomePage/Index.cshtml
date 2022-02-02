@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Home Page</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sections</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Home Page Banner Section</td>
+                                    <td><a class="btn btn-success" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateBanner">Update</a></td>                                </tr>
+                                <tr>
+                                    <td>Features</td>
+                                    <td><a class="btn btn-success" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateFeatures">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>About Section</td>
+                                    <td><a class="btn btn-success" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateAbout">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Gallery Section</td>
+                                    <td><a class="btn btn-success" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateGallery">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Cards with increasing numbers</td>
+                                    <td><a class="btn btn-success" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateCards">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Rooms Section</th>
+                                    <td><a class="btn btn-success" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateRoom">Update</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Testimonials Section</td>
+                                    <td><a class="btn btn-success" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateTestimonials">Update</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

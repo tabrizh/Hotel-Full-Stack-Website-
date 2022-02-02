@@ -159,69 +159,77 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 InstagramLink = dbTeam.InstagramLink,
                 YoutubeLink = dbTeam.YoutubeLink
             };
-
-
-            if (!ModelState.IsValid) return View(teamVM);
-
-            dbTeam.Name = model.Name;
-            dbTeam.JobTitle = model.JobTitle;
-            dbTeam.FacebookLink = model.FacebookLink;
-            dbTeam.InstagramLink = model.InstagramLink;
-            dbTeam.TwitterLink = model.TwitterLink;
-            dbTeam.YoutubeLink = model.YoutubeLink;
-
-            if (model.File != null)
+            try
             {
+                if (!ModelState.IsValid) return View(teamVM);
 
-                if (!model.File.IsImage())
+                dbTeam.Name = model.Name;
+                dbTeam.JobTitle = model.JobTitle;
+                dbTeam.FacebookLink = model.FacebookLink;
+                dbTeam.InstagramLink = model.InstagramLink;
+                dbTeam.TwitterLink = model.TwitterLink;
+                dbTeam.YoutubeLink = model.YoutubeLink;
+
+                if (model.File != null)
                 {
-                    ModelState.AddModelError(nameof(TeamUpdateViewModel.File), "File is not supported");
-                    return View(teamVM);
+
+                    if (!model.File.IsImage())
+                    {
+                        ModelState.AddModelError(nameof(TeamUpdateViewModel.File), "File is not supported");
+                        return View(teamVM);
+                    }
+
+                    if (model.File.IsGreaterThanGivenSize(2000))
+                    {
+                        ModelState.AddModelError(nameof(TeamUpdateViewModel.File), "File size cannot be more than 2mb");
+                        return View(teamVM);
+                    }
+
+                    var imageName = FileUtility.CreateFile(Path.Combine(FileConstants.ImagePath, "team"), model.File);
+                    dbTeam.Image = imageName;
                 }
 
-                if (model.File.IsGreaterThanGivenSize(2000))
-                {
-                    ModelState.AddModelError(nameof(TeamUpdateViewModel.File), "File size cannot be more than 2mb");
-                    return View(teamVM);
-                }
+                _context.TeamMembers.Update(dbTeam);
+                await _context.SaveChangesAsync();
 
-                var imageName = FileUtility.CreateFile(Path.Combine(FileConstants.ImagePath, "team"), model.File);
-                dbTeam.Image = imageName;
+                return RedirectToAction(nameof(Index), "Team");
             }
-
-            _context.TeamMembers.Update(dbTeam);
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction(nameof(Index));
-
-            //try
-            //{
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
+            catch
+            {
+                ModelState.AddModelError("", "Something went wrong");
+                return View(teamVM);
+            }
         }
 
         // GET: TeamController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+            var teamMember = await _context.TeamMembers.FirstOrDefaultAsync(tm => tm.Id == id && !tm.IsDeleted);
+            if (teamMember == null) return NotFound();
+
+            return View(new TeamViewModel { Id = teamMember.Id, Image = teamMember.Image, Name = teamMember.Name, JobTitle = teamMember.JobTitle });
         }
 
         // POST: TeamController/Delete/5
         [HttpPost]
+        [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteTeam(int id)
         {
             try
             {
+                var teamMember = await _context.TeamMembers.FirstOrDefaultAsync(tm => tm.Id == id && !tm.IsDeleted);
+                if (teamMember == null) return NotFound();
+
+                teamMember.IsDeleted = true;
+                _context.TeamMembers.Update(teamMember);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return BadRequest();
             }
         }
     }

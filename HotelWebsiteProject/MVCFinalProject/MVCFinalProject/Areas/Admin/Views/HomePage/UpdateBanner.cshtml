@@ -1,0 +1,58 @@
+﻿@model HomePageBannerViewModel
+@{
+    ViewData["Title"] = "UpdateBanner";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <h4 class="card-title">Update Home Page Banner Section</h4>
+                    <img style="width:300px; height:300px" src="~/img/banners/@Model.Image" />
+                    <form class="forms-sample" method="post" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateBanner" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label asp-for="Heading">Heading</label>
+                            <input class="form-control" asp-for="Heading" placeholder="Heading">
+                            <span class="text-danger" asp-validation-for="Heading"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SubHeading">Sub Heading</label>
+                            <textarea asp-for="SubHeading"></textarea>
+                            <span class="text-danger" asp-validation-for="SubHeading"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="File">Image</label>
+                            <input class="form-control" asp-for="File" accept="image/*">
+                            <span class="text-danger" asp-validation-for="File"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a asp-action="Index" class="btn btn-light">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidatePartial" />
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#SubHeading'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}
+
+

@@ -58,7 +58,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
             try
             {
                 if (!ModelState.IsValid) return View();
-                Features createdFeature = new Features { Text = model.Text };
+                Features createdFeature = new Features { Text = model.Text, Selected = false };
 
                 if (model.Image != null)
                 {

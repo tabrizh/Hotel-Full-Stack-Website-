@@ -30,7 +30,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var contextRooms = await _context.Rooms.Where(r => !r.IsDeleted && r.IsAvailable).OrderBy(rr => rr.HotelId).ToListAsync();
-
+            
             List<RoomViewModel> roomsVM = new List<RoomViewModel>();
             foreach (var room in contextRooms)
             {
@@ -105,85 +105,82 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 Services = await _context.Services.Where(s => !s.IsDeleted).ToListAsync()
             };
 
-            if (!ModelState.IsValid) return View(roomVM);
-
-            Room createdRoom = new Room
+            try
             {
-                Name = model.Name,
-                Description = model.Description,
-                Size = model.Size,
-                Price = model.Price,
-                Number = model.Number,
-                HotelId = model.HotelId,
-                IsAvailable = model.IsAvailable,
-                PersonCapacity = model.PersonCapacity,
-                Popular = model.Popular
-            };
+                if (!ModelState.IsValid) return View(roomVM);
 
-            if (model.Image != null)
-            {
-                if (!model.Image.IsImage())
+                Room createdRoom = new Room
                 {
-                    ModelState.AddModelError(nameof(RoomCreateViewModel.Image), "File is not supported");
-                    return View(roomVM);
-                }
+                    Name = model.Name,
+                    Description = model.Description,
+                    Size = model.Size,
+                    Price = model.Price,
+                    Number = model.Number,
+                    HotelId = model.HotelId,
+                    IsAvailable = model.IsAvailable,
+                    PersonCapacity = model.PersonCapacity,
+                    Popular = model.Popular
+                };
 
-                if (model.Image.IsGreaterThanGivenSize(2000))
+                if (model.Image != null)
                 {
-                    ModelState.AddModelError(nameof(RoomCreateViewModel.Image), "File size cannot be more than 2mb");
-                    return View(roomVM);
-                }
-
-                var imageName = FileUtility.CreateFile(Path.Combine(FileConstants.ImagePath, "rooms"), model.Image);
-                createdRoom.Image = imageName;
-            }
-
-            await _context.Rooms.AddAsync(createdRoom);
-            await _context.SaveChangesAsync();
-
-            if (model.Images != null)
-            {
-                List<RoomImage> newImages = new List<RoomImage>();
-                foreach (var image in model.Images)
-                {
-                    if (!image.IsImage())
+                    if (!model.Image.IsImage())
                     {
-                        ModelState.AddModelError(nameof(RoomCreateViewModel.Images), "File is not supported");
+                        ModelState.AddModelError(nameof(RoomCreateViewModel.Image), "File is not supported");
                         return View(roomVM);
                     }
 
-                    if (image.IsGreaterThanGivenSize(2000))
+                    if (model.Image.IsGreaterThanGivenSize(2000))
                     {
-                        ModelState.AddModelError(nameof(RoomCreateViewModel.Images), "File size cannot be more than 2mb");
+                        ModelState.AddModelError(nameof(RoomCreateViewModel.Image), "File size cannot be more than 2mb");
                         return View(roomVM);
                     }
 
-                    var imageName = FileUtility.CreateFile(Path.Combine(FileConstants.ImagePath, "rooms", "room"), image);
-                    newImages.Add(new RoomImage { RoomId = createdRoom.Id, ImageURL = imageName });
+                    var imageName = FileUtility.CreateFile(Path.Combine(FileConstants.ImagePath, "rooms"), model.Image);
+                    createdRoom.Image = imageName;
                 }
-                await _context.RoomImages.AddRangeAsync(newImages);
+
+                await _context.Rooms.AddAsync(createdRoom);
+                await _context.SaveChangesAsync();
+
+                if (model.Images != null)
+                {
+                    List<RoomImage> newImages = new List<RoomImage>();
+                    foreach (var image in model.Images)
+                    {
+                        if (!image.IsImage())
+                        {
+                            ModelState.AddModelError(nameof(RoomCreateViewModel.Images), "File is not supported");
+                            return View(roomVM);
+                        }
+
+                        if (image.IsGreaterThanGivenSize(2000))
+                        {
+                            ModelState.AddModelError(nameof(RoomCreateViewModel.Images), "File size cannot be more than 2mb");
+                            return View(roomVM);
+                        }
+
+                        var imageName = FileUtility.CreateFile(Path.Combine(FileConstants.ImagePath, "rooms", "room"), image);
+                        newImages.Add(new RoomImage { RoomId = createdRoom.Id, ImageURL = imageName });
+                    }
+                    await _context.RoomImages.AddRangeAsync(newImages);
+                }
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index), "Room");
             }
-
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction(nameof(Index), "Room");
-
-
-            //try
-            //{
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //catch
-            //{
-            //    ModelState.AddModelError("", "Gözlənilməz xəta baş verdi");
-            //    return View();
-            //}
+            catch
+            {
+                ModelState.AddModelError("", "Gözlənilməz xəta baş verdi");
+                return View(roomVM);
+            }
         }
 
         // GET: RoomController/Edit/5
         public async Task<IActionResult> Update(int id)
         {
-            var dbRoom = await _context.Rooms.Include(rf => rf.RoomFeatures).Include(rs => rs.RoomServices).Include(rh => rh.Hotel)
+            var dbRoom = await _context.Rooms.Include(rf => rf.RoomFeatures).Include(rs => rs.RoomServices)
                 .FirstOrDefaultAsync(rr => rr.Id == id && !rr.IsDeleted);
 
             if (dbRoom == null) return NotFound();
@@ -200,6 +197,7 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 IsAvailable = dbRoom.IsAvailable,
                 Number = dbRoom.Number,
                 HotelId = dbRoom.HotelId,
+
                 Hotels = await _context.Hotels.Where(hh => !hh.IsDeleted).ToListAsync(),
                 Features = await _context.Features.Where(ff => !ff.IsDeleted).ToListAsync(),
                 Services = await _context.Services.Where(ss => !ss.IsDeleted).ToListAsync()
@@ -253,10 +251,11 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 ModelState.AddModelError(nameof(RoomUpdateViewModel.HotelId), "Duzgun sechim edin");
                 return View(roomVM);
             }
+
             dbRoom.HotelId = model.HotelId;
 
             List<RoomFeatures> roomFeaturesList = new List<RoomFeatures>();
-            var roomFeatures = await _context.RoomFeatures.Where(rf => rf.RoomId == dbRoom.Id).Select(r => r.Features).ToListAsync();
+            var roomFeatures = await _context.RoomFeatures.Where(rf => rf.RoomId == dbRoom.Id && !rf.IsDeleted).Select(r => r.Features).ToListAsync();
             if (model.FeaturesId != null)
             {
                 foreach (var featureId in model.FeaturesId)

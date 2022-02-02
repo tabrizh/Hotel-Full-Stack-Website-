@@ -180,6 +180,9 @@ namespace MVCFinalProject.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("Selected")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 

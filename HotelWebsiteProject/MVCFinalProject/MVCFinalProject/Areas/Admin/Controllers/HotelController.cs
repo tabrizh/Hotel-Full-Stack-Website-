@@ -215,6 +215,15 @@ namespace MVCFinalProject.Areas.Admin.Controllers
                 if (contextHotel == null) return NotFound();
 
                 contextHotel.IsDeleted = true;
+                var hotelRooms = await _context.Rooms.Where(r => r.HotelId == contextHotel.Id).ToListAsync();
+                foreach (var room in hotelRooms)
+                {
+                    room.IsDeleted = true;
+                    _context.Rooms.Update(room);
+                }
+
+                _context.Hotels.Update(contextHotel);
+
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));

@@ -30,7 +30,7 @@
                         @Model.HomePageBannerSection.Heading
                     </h1>
                     <div class="hotel-mb-30 hotel-center">
-                        @Model.HomePageBannerSection.SubHeading
+                        @Html.Raw(Model.HomePageBannerSection.SubHeading)
                     </div>
                 </div>
             </div>
@@ -143,10 +143,10 @@
                         <div class="hotel-about-text">
                             <div class="hotel-title-frame">
                                 <h2 class="hotel-mb-20">
-                                    @about.Heading
+                                    @Html.Raw(about.Heading)
                                 </h2>
                                 <p class="hotel-mb-30">
-                                    @about.Description
+                                    @Html.Raw(about.Description)
                                 </p>
                                 <a asp-controller="About" asp-action="Index" class="hotel-btn hotel-btn-md">@about.BtnText</a>
                             </div>

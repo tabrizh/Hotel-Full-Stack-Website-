@@ -1,0 +1,51 @@
+﻿@model HomePageFeaturesViewModel
+@{
+    ViewData["Title"] = "UpdateFeatures";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <h4 class="card-title">Edit HomePage Features</h4>
+                    <form class="forms-sample" method="post" asp-area="Admin" asp-controller="HomePage" asp-action="UpdateFeatures" enctype="multipart/form-data">
+                        <h1>Currently Selected Features</h1>
+                        <ul>
+                            @foreach (var feature in Model.Features)
+                            {
+                                if (feature.Selected)
+                                {
+                                    <li style=" display: flex; align-items: center; justify-content: space-between;">@feature.Text <img style="width:150px;height:150px;object-fit:contain"; src="~/img/features/@feature.Image" /></li>
+                                }
+                            }
+                        </ul>
+                        <div class="form-group">
+                            <label asp-for="SelectedFeatures">Select Features</label>
+                            <select style="height: 200px;" class="form-select" asp-for="SelectedFeatures" multiple>
+                                <option value="0" disabled selected>--Select Features--</option>
+                                @foreach (var feature in Model.Features)
+                                {
+                                    <option value="@feature.Id">@feature.Text</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="SelectedFeatures"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a asp-area="Admin" asp-controller="HomePage" asp-action="Index" class="btn btn-light">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidatePartial" />
+
+}
+
+

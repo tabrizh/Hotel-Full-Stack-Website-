@@ -25,7 +25,7 @@ namespace MVCFinalProject.Controllers
             HomePageViewModel homeVM = new HomePageViewModel
             {
                 HomePageBannerSection = await _context.HomePageBannerSection.FirstOrDefaultAsync(b => !b.IsDeleted), 
-                Features = await _context.Features.Where(f => !f.IsDeleted).Take(4).ToListAsync(),
+                Features = await _context.Features.Where(f => !f.IsDeleted && f.Selected).ToListAsync(),
                 AboutSection = await _context.AboutSection.Where(a => !a.IsDeleted).ToListAsync(),
                 GallerySection = await _context.GallerySectionText.FirstOrDefaultAsync(g => !g.IsDeleted),
                 GallerySectionImages = await _context.GallerySectionImages.Where(i => !i.IsDeleted).ToListAsync(),

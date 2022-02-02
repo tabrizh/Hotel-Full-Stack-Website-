@@ -14,6 +14,7 @@ namespace MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels
 
         [Required]
         public string Name { get; set; }
+
         public IFormFile Image { get; set; }
 
         [Required]
@@ -39,6 +40,7 @@ namespace MVCFinalProject.Areas.Admin.ViewModels.RoomViewModels
 
         [Required]
         public int HotelId { get; set; }
+
         public IFormFile[] Images { get; set; }
         public ICollection<int> FeaturesId { get; set; }
         public ICollection<int> ServicesId { get; set; }

@@ -9,13 +9,18 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-                    <h4 class="card-title">Update a Team Membet</h4>
+                    <h4 class="card-title">Update a Team Member</h4>
                     <img style="width: 230px; height: 300px; object-fit: contain;" src="~/img/team/@Model.Image" />
                     <form class="forms-sample" method="post" asp-area="Admin" asp-controller="Team" asp-action="Update" enctype="multipart/form-data">
                         <div class="form-group">
                             <label asp-for="Name">Name</label>
                             <input class="form-control" asp-for="Name" placeholder="Name">
                             <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="JobTitle">Job Title</label>
+                            <input class="form-control" asp-for="JobTitle" placeholder="Job Title">
+                            <span class="text-danger" asp-validation-for="JobTitle"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="FacebookLink">Facebook Link</label>
@@ -29,8 +34,8 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="TwitterLink">Instagram Link</label>
-                            <input class="form-control" asp-for="InstagramLink" placeholder="Instagram Link">
-                            <span class="text-danger" asp-validation-for="InstagramLink"></span>
+                            <input class="form-control" asp-for="TwitterLink" placeholder="Twitter Link">
+                            <span class="text-danger" asp-validation-for="TwitterLink"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="YoutubeLink">Youtube Link</label>

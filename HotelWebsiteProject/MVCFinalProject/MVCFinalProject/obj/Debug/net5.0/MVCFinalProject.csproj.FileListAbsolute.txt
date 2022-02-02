@@ -162,11 +162,6 @@ C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\View
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Views\Hotel\Details.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Views\Room\Details.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Delete.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Details.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Update.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidatePartial.cshtml.g.cs
@@ -177,7 +172,6 @@ C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Area
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\ChangePassword.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
-C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\MVCFinalProject.csproj.AssemblyReference.cache
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\ChangeRole.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Hotel\Index.cshtml.g.cs
@@ -202,3 +196,10 @@ C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Area
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Details.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Create.cshtml.g.cs
 C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Update.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\Team\Delete.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePage\Index.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePage\UpdateBanner.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\MVCFinalProject.csproj.AssemblyReference.cache
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePage\UpdateFeatures.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePage\UpdateAbout.cshtml.g.cs
+C:\Users\MAC\Desktop\MVCFinalProject\MVCFinalProject\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePage\UpdateAboutId.cshtml.g.cs
